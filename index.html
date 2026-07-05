@@ -22,7 +22,7 @@
 <script>document.documentElement.classList.add('ww-js')</script>
 </head>
 <body class="board">
-<button class="btn-patch night-corner" style="--c:var(--plum);--t:var(--thread-plum)" onclick="woolwork.night()">Night</button>
+<button type="button" class="btn-patch night-corner" style="--c:var(--plum);--t:var(--thread-plum)" onclick="woolwork.night()">Night</button>
 <main>
   <header class="felt deep stitch sew hero" style="--c:var(--cream);--t:var(--thread-cream)">
     <canvas id="bunting" aria-hidden="true"></canvas>
@@ -49,9 +49,9 @@
     phase. Slide the button through its buttonhole. Every card on this page settled onto the board
     and had its stitch drawn around it, once, as it came into view.</p>
     <div class="demo-row">
-      <button class="btn-patch" style="--c:var(--butter);--t:var(--thread-butter)">A patch button</button>
+      <button type="button" class="btn-patch" style="--c:var(--butter);--t:var(--thread-butter)">A patch button</button>
       <label style="display:flex;align-items:center;gap:8px"><input type="checkbox" class="sew-check"> sew me down</label>
-      <button class="buttonhole" aria-pressed="false" aria-label="a buttonhole toggle"><span class="knob"></span></button>
+      <button type="button" class="buttonhole" aria-pressed="false" aria-label="a buttonhole toggle"><span class="knob"></span></button>
       <input class="pocket" type="text" placeholder="a pocket input" style="max-width:200px">
     </div>
   </div>

@@ -23,7 +23,7 @@
 </head>
 <body class="board">
 <a class="btn-patch top-link" style="--c:var(--sky);--t:var(--thread-sky)" href="index.html">Woolwork</a>
-<button class="btn-patch night-corner" style="--c:var(--plum);--t:var(--thread-plum)" onclick="woolwork.night()">Night</button>
+<button type="button" class="btn-patch night-corner" style="--c:var(--plum);--t:var(--thread-plum)" onclick="woolwork.night()">Night</button>
 
 <main>
   <div class="intro sew">
@@ -76,16 +76,16 @@
     actions are real four-hole sewn buttons, thread cross and all.</p>
     <div class="stage felt stitch sew" style="--c:var(--cream);--t:var(--thread-cream)">
       <div class="row">
-        <button class="btn-patch" style="--c:var(--butter);--t:var(--thread-butter)">Add to cart</button>
-        <button class="btn-patch" style="--c:var(--rose);--t:var(--thread-rose)">Checkout</button>
-        <button class="sewn-button" style="--c:var(--sky)" aria-label="sewn button, sky"></button>
-        <button class="sewn-button" style="--c:var(--leaf)" aria-label="sewn button, leaf"></button>
+        <button type="button" class="btn-patch" style="--c:var(--butter);--t:var(--thread-butter)">Add to cart</button>
+        <button type="button" class="btn-patch" style="--c:var(--rose);--t:var(--thread-rose)">Checkout</button>
+        <button type="button" class="sewn-button" style="--c:var(--sky)" aria-label="sewn button, sky"></button>
+        <button type="button" class="sewn-button" style="--c:var(--leaf)" aria-label="sewn button, leaf"></button>
         <a class="thread-link" href="#materials">a loose-thread link, pulls taut on hover</a>
       </div>
     </div>
     <div class="stage felt stitch sew" style="--c:var(--butter);--t:var(--thread-butter)">
       <span class="field-label">Toggle: the buttonhole</span>
-      <button class="buttonhole" aria-pressed="true" aria-label="notifications"><span class="knob"></span></button>
+      <button type="button" class="buttonhole" aria-pressed="true" aria-label="notifications"><span class="knob"></span></button>
       <span class="cap">The knob is a small sewn button sliding through a stitched buttonhole.</span>
     </div>
   </section>
@@ -99,7 +99,7 @@
       <div class="row" style="align-items:flex-start">
         <div class="field" style="flex:1">
           <label for="ws-name">Your name</label>
-          <input id="ws-name" class="pocket" placeholder="Tuck it in here">
+          <input id="ws-name" class="pocket" type="text" placeholder="Tuck it in here">
           <span class="cap">Focus wraps a rose thread around the opening.</span>
         </div>
         <div class="field" style="flex:1">
@@ -146,9 +146,9 @@
     hamburger is three strands that pull into a cross.</p>
     <div class="stage felt stitch sew" style="--c:var(--cream);--t:var(--thread-cream)">
       <div class="tabs" role="tablist">
-        <button role="tab" id="ws-t1" aria-selected="true" aria-controls="ws-p1" style="--c:var(--butter)">Care</button>
-        <button role="tab" id="ws-t2" aria-selected="false" aria-controls="ws-p2" style="--c:var(--sky)">Shipping</button>
-        <button role="tab" id="ws-t3" aria-selected="false" aria-controls="ws-p3" style="--c:var(--rose)">Returns</button>
+        <button type="button" role="tab" id="ws-t1" aria-selected="true" aria-controls="ws-p1" style="--c:var(--butter)">Care</button>
+        <button type="button" role="tab" id="ws-t2" aria-selected="false" aria-controls="ws-p2" style="--c:var(--sky)">Shipping</button>
+        <button type="button" role="tab" id="ws-t3" aria-selected="false" aria-controls="ws-p3" style="--c:var(--rose)">Returns</button>
       </div>
       <div class="felt" style="--c:var(--butter);padding:16px 18px">
         <div class="tab-panel" role="tabpanel" aria-labelledby="ws-t1" id="ws-p1">Cold water, wool cycle, folded flat to dry.</div>
@@ -176,12 +176,12 @@
         <details class="flap">
           <summary class="btn-patch" style="--c:var(--sky);--t:var(--thread-sky)">More options</summary>
           <div class="panel felt" style="--c:var(--cream)">
-            <button>Duplicate</button>
-            <button>Archive</button>
-            <button>Delete</button>
+            <button type="button">Duplicate</button>
+            <button type="button">Archive</button>
+            <button type="button">Delete</button>
           </div>
         </details>
-        <button class="strands" aria-expanded="false" aria-label="menu">
+        <button type="button" class="strands" aria-expanded="false" aria-label="menu">
           <span class="yarn" style="--c:var(--thread-cream)"></span>
           <span class="yarn" style="--c:var(--thread-cream)"></span>
           <span class="yarn" style="--c:var(--thread-cream)"></span>
@@ -197,15 +197,15 @@
     across a pressed crease.</p>
     <div class="stage felt stitch sew" style="--c:var(--cream);--t:var(--thread-cream)">
       <div class="row">
-        <button class="btn-patch" style="--c:var(--rose);--t:var(--thread-rose)" id="ws-open-pin">Pin up a note</button>
-        <button class="btn-patch" style="--c:var(--butter);--t:var(--thread-butter)" onclick="woolwork.toast('Saved to your pattern box.')">Show a toast</button>
+        <button type="button" class="btn-patch" style="--c:var(--rose);--t:var(--thread-rose)" id="ws-open-pin">Pin up a note</button>
+        <button type="button" class="btn-patch" style="--c:var(--butter);--t:var(--thread-butter)" onclick="woolwork.toast('Saved to your pattern box.')">Show a toast</button>
         <span data-tip="A paper tag, tied on with thread" tabindex="0">hover or focus for a tooltip</span>
       </div>
       <dialog class="pinned" id="ws-pin">
         <div class="safety-pin tl"></div><div class="safety-pin tr"></div>
         <h3 style="margin:0 0 8px">Care note</h3>
         <p style="margin:0 0 16px">This yarn runs slightly warm in the dye lot; wash separately the first time.</p>
-        <button class="btn-patch" style="--c:var(--sky);--t:var(--thread-sky)" onclick="document.getElementById('ws-pin').close()">Got it</button>
+        <button type="button" class="btn-patch" style="--c:var(--sky);--t:var(--thread-sky)" onclick="document.getElementById('ws-pin').close()">Got it</button>
       </dialog>
     </div>
     <hr class="seam sew">

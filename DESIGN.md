@@ -1,7 +1,7 @@
 ---
 version: alpha
 name: Woolwork
-description: A hand-stitched world of wool, felt, and yarn. Tokens mirror the Woolwork kit (woolwork.css v1.1.0), which is the wired token source for this repo.
+description: A hand-stitched world of wool, felt, and yarn. Tokens mirror the Woolwork kit (woolwork.css v1.1.1), which is the wired token source for this repo.
 colors:
   board: "#e3ddd0"
   cream: "#f6efdf"
@@ -77,7 +77,7 @@ components:
 
 Woolwork turns an interface into a believable craft table. The page background is a burlap work board; every element on it is a wool, felt, or yarn object attached to that board by a nameable fastening: sewn, buttoned, snapped, pinned, zipped, or pocketed. The feeling is warm, handmade, and physical, closer to a toy shop than a dashboard, but everything remains a real, accessible control underneath.
 
-The wired token source in this repository is `woolwork.css` (the kit, v1.1.0). This file is the reference those tokens follow; when the kit re-dyes, this file updates in the same change.
+The wired token source in this repository is `woolwork.css` (the kit, v1.1.1). This file is the reference those tokens follow; when the kit re-dyes, this file updates in the same change.
 
 ## Colors
 
