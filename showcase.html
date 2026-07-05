@@ -1,0 +1,274 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Woolwork components</title>
+<meta name="description" content="Woolwork: a drop-in design system that turns any website into wool, felt, and yarn.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="woolwork.css">
+<style>
+main{max-width:960px;margin:0 auto;padding:0 22px 70px}
+.intro{padding:40px 40px 34px;text-align:center}
+.intro h1{font:800 clamp(2rem,5vw,2.8rem)/1.1 var(--font-display);margin:0 0 10px;color:var(--ink)}
+.intro p{font-size:1.05rem;color:var(--ink-soft);max-width:620px;margin:0 auto}
+.jump{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:22px}
+.jump a{text-decoration:none}
+.section{margin:54px 0}
+.section h2{font:800 1.5rem var(--font-display);margin:0 0 6px;color:var(--ink);scroll-margin-top:20px}
+.section .lede{color:var(--ink-soft);margin:0 0 20px;max-width:64ch}
+.stage{padding:26px 28px}
+.stage+.stage{margin-top:16px}
+.row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.row+.row{margin-top:16px}
+.cap{display:block;font-size:.82rem;color:var(--ink-soft);margin-top:6px}
+.field{min-width:200px}
+.field label{display:block;margin-bottom:6px;font-weight:700;font-size:.9rem}
+.swatch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.swatch{padding:20px;font-weight:800;font-family:var(--font-display);color:var(--ink);min-height:70px;display:flex;align-items:flex-end}
+.night-corner{position:fixed;top:14px;right:14px;z-index:70}
+.top-link{position:fixed;top:14px;left:14px;z-index:70;text-decoration:none}
+</style></head><body class="board">
+<a class="btn-patch top-link" style="--c:var(--sky);--t:var(--thread-sky)" href="index.html">Woolwork</a>
+<button class="btn-patch night-corner" style="--c:var(--plum);--t:var(--thread-plum)" onclick="woolwork.night()">Night</button>
+
+<main>
+  <div class="intro sew">
+    <h1>Every component, in one material</h1>
+    <p>Woolwork gives every common interface element a craft counterpart: a felt patch, a stitched
+    seam, a snap fastener. This page shows the full set, organized by what it does. Everything on
+    it is a live, working component built from the same stylesheet and script you would install.</p>
+    <nav class="jump sew">
+      <a class="btn-patch" style="--c:var(--butter);--t:var(--thread-butter)" href="#materials">Materials</a>
+      <a class="btn-patch" style="--c:var(--rose);--t:var(--thread-rose)" href="#controls">Controls</a>
+      <a class="btn-patch" style="--c:var(--leaf);--t:var(--thread-leaf)" href="#forms">Forms</a>
+      <a class="btn-patch" style="--c:var(--sky);--t:var(--thread-sky)" href="#navigation">Navigation</a>
+      <a class="btn-patch" style="--c:var(--plum);--t:var(--thread-plum)" href="#overlays">Overlays</a>
+      <a class="btn-patch" style="--c:var(--cream);--t:var(--thread-cream)" href="#data">Data</a>
+      <a class="btn-patch" style="--c:var(--butter);--t:var(--thread-butter)" href="#content">Content</a>
+    </nav>
+  </div>
+
+  <section class="section" id="materials">
+    <h2 class="sew">Materials</h2>
+    <p class="lede sew">Two surfaces carry every patch: felt, a flat-dyed nap, and knit, a
+    stockinette weave built from repeating V loops. Both take fiber grain and a single top-left
+    light, never a flat fill.</p>
+    <div class="swatch-grid">
+      <div class="felt stitch swatch sew" style="--c:var(--cream);--t:var(--thread-cream)">felt · cream</div>
+      <div class="felt stitch swatch sew" style="--c:var(--rose);--t:var(--thread-rose);--sew-delay:.05s">felt · rose</div>
+      <div class="felt stitch swatch sew" style="--c:var(--leaf);--t:var(--thread-leaf);--sew-delay:.1s">felt · leaf</div>
+      <div class="knit stitch swatch sew" style="--c:var(--sky);--t:var(--thread-sky);--sew-delay:.15s">knit · sky</div>
+      <div class="knit stitch swatch sew" style="--c:var(--plum);--t:var(--thread-plum);--sew-delay:.2s">knit · plum</div>
+      <div class="knit stitch swatch sew" style="--c:var(--butter);--t:var(--thread-butter);--sew-delay:.25s">knit · butter</div>
+    </div>
+    <div class="stage felt sew" style="--c:var(--cream);margin-top:16px;padding:20px 24px">
+      <div class="yarn" style="--c:var(--rose)"></div>
+      <span class="cap">A yarn strand: a two-tone diagonal ply twist with a top highlight, used for dividers, hamburger strands, and progress fills.</span>
+    </div>
+  </section>
+
+  <section class="section" id="controls">
+    <h2 class="sew">Buttons &amp; controls</h2>
+    <p class="lede sew">A button is a felt patch stitched to the board; pressing it settles it 1.5px
+    into a deeper shadow, never a scale, so labels and stitches stay perfectly still. Round icon
+    buttons are real four-hole sewn buttons.</p>
+    <div class="stage felt stitch sew" style="--c:var(--cream);--t:var(--thread-cream)">
+      <div class="row">
+        <button class="btn-patch" style="--c:var(--butter);--t:var(--thread-butter)">Add to cart</button>
+        <button class="btn-patch" style="--c:var(--rose);--t:var(--thread-rose)">Checkout</button>
+        <button class="sewn-button" style="--c:var(--sky)" aria-label="favorite"></button>
+        <button class="sewn-button" style="--c:var(--leaf)" aria-label="share"></button>
+        <a class="thread-link" href="#materials">a loose-thread link, pulls taut on hover</a>
+      </div>
+    </div>
+    <div class="stage felt stitch sew" style="--c:var(--butter);--t:var(--thread-butter)">
+      <label style="display:block;margin-bottom:10px;font-weight:700">Toggle: the buttonhole</label>
+      <button class="buttonhole" aria-pressed="true" aria-label="notifications"><span class="knob"></span></button>
+      <span class="cap">The knob is a small sewn button sliding through a stitched buttonhole.</span>
+    </div>
+  </section>
+
+  <section class="section" id="forms">
+    <h2 class="sew">Forms</h2>
+    <p class="lede sew">Every input is a pocket, a slit cut into the felt with the contents tucked
+    inside. Choices are snap fasteners or sewn checkboxes; ranges are a yarn-ball bead on a stitched
+    channel.</p>
+    <div class="stage felt stitch sew" style="--c:var(--cream);--t:var(--thread-cream)">
+      <div class="row" style="align-items:flex-start">
+        <div class="field" style="flex:1">
+          <label for="ws-name">Your name</label>
+          <input id="ws-name" class="pocket" placeholder="Tuck it in here">
+          <span class="cap">Focus wraps a rose thread around the opening.</span>
+        </div>
+        <div class="field" style="flex:1">
+          <label for="ws-yarn">Preferred weight</label>
+          <select id="ws-yarn" class="pocket">
+            <option>Lace</option><option>Fingering</option><option>DK</option><option>Aran</option>
+          </select>
+        </div>
+      </div>
+      <div class="row" style="margin-top:16px">
+        <div class="field" style="flex:1">
+          <label for="ws-notes">Notes</label>
+          <textarea id="ws-notes" class="pocket" placeholder="A deeper pocket for longer things"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="stage felt stitch sew" style="--c:var(--leaf);--t:var(--thread-leaf)">
+      <div class="row">
+        <div class="field">
+          <label>Cross-stitched checkboxes</label>
+          <div class="row" style="gap:10px"><input type="checkbox" class="sew-check" id="ws-c1" checked><label for="ws-c1">Wool wash</label></div>
+          <div class="row" style="gap:10px;margin-top:8px"><input type="checkbox" class="sew-check" id="ws-c2"><label for="ws-c2">Air dry</label></div>
+        </div>
+        <div class="field">
+          <label>Snap fasteners (one snaps in)</label>
+          <div class="row" style="gap:10px"><input type="radio" name="ws-ply" class="snap-radio" id="ws-r1" checked><label for="ws-r1">2-ply</label></div>
+          <div class="row" style="gap:10px;margin-top:8px"><input type="radio" name="ws-ply" class="snap-radio" id="ws-r2"><label for="ws-r2">4-ply</label></div>
+        </div>
+        <div class="field" style="flex:1;min-width:220px">
+          <label for="ws-range">Yarn-ball bead slider</label>
+          <input id="ws-range" type="range" class="bead-slider">
+          <label style="margin-top:14px" for="ws-progress">Skein remaining (read-only)</label>
+          <div class="spool" id="ws-progress" style="--c:var(--sky);--p:64%"><div class="fill"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="navigation">
+    <h2 class="sew">Navigation</h2>
+    <p class="lede sew">Tabs are felt folder tabs stitched onto a shared panel; the open one lifts.
+    Breadcrumbs are small tags strung on one thread. Pagination is a row of patches where the
+    current page sits pressed into the board. A dropdown is a fabric flap that unfolds, and a
+    hamburger is three strands that pull into a cross.</p>
+    <div class="stage felt stitch sew" style="--c:var(--cream);--t:var(--thread-cream)">
+      <div class="tabs" role="tablist">
+        <button role="tab" aria-selected="true" aria-controls="ws-p1" style="--c:var(--butter)">Care</button>
+        <button role="tab" aria-selected="false" aria-controls="ws-p2" style="--c:var(--sky)">Shipping</button>
+        <button role="tab" aria-selected="false" aria-controls="ws-p3" style="--c:var(--rose)">Returns</button>
+      </div>
+      <div class="felt" style="--c:var(--butter);padding:16px 18px">
+        <div class="tab-panel" id="ws-p1">Cold water, wool cycle, folded flat to dry.</div>
+        <div class="tab-panel" id="ws-p2" hidden>Ships in three to five days, tracked.</div>
+        <div class="tab-panel" id="ws-p3" hidden>Unused skeins returnable within thirty days.</div>
+      </div>
+    </div>
+    <div class="stage felt stitch sew" style="--c:var(--cream);--t:var(--thread-cream)">
+      <div class="row">
+        <ul class="crumbs">
+          <li><a href="#">Patterns</a></li>
+          <li><a href="#">Sweaters</a></li>
+          <li><span aria-current="page">Cardigan</span></li>
+        </ul>
+        <ul class="pages">
+          <li><a href="#">1</a></li>
+          <li><span aria-current="page">2</span></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="stage felt stitch sew" style="--c:var(--cream);--t:var(--thread-cream)">
+      <div class="row">
+        <details class="flap">
+          <summary class="btn-patch" style="--c:var(--sky);--t:var(--thread-sky)">More options</summary>
+          <div class="panel felt" style="--c:var(--cream)">
+            <button>Duplicate</button>
+            <button>Archive</button>
+            <button>Delete</button>
+          </div>
+        </details>
+        <button class="strands" aria-expanded="false" aria-label="menu">
+          <span class="yarn" style="--c:var(--thread-cream)"></span>
+          <span class="yarn" style="--c:var(--thread-cream)"></span>
+          <span class="yarn" style="--c:var(--thread-cream)"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="overlays">
+    <h2 class="sew">Overlays, seams &amp; feedback</h2>
+    <p class="lede sew">A modal is a note pinned over the board with safety pins. A tooltip is a
+    paper tag tied on with thread. An accordion unzips. A divider is a seam: a running stitch across
+    a pressed crease.</p>
+    <div class="stage felt stitch sew" style="--c:var(--cream);--t:var(--thread-cream)">
+      <div class="row">
+        <button class="btn-patch" style="--c:var(--rose);--t:var(--thread-rose)" id="ws-open-pin">Pin up a note</button>
+        <button class="btn-patch" style="--c:var(--butter);--t:var(--thread-butter)" onclick="woolwork.toast('Saved to your pattern box.')">Show a toast</button>
+        <span data-tip="A paper tag, tied on with thread">hover for a tooltip</span>
+      </div>
+      <dialog class="pinned" id="ws-pin">
+        <div class="safety-pin tl"></div><div class="safety-pin tr"></div>
+        <h3 style="margin:0 0 8px">Care note</h3>
+        <p style="margin:0 0 16px">This yarn runs slightly warm in the dye lot; wash separately the first time.</p>
+        <button class="btn-patch" style="--c:var(--sky);--t:var(--thread-sky)" onclick="document.getElementById('ws-pin').close()">Got it</button>
+      </dialog>
+    </div>
+    <hr class="seam sew">
+    <div class="stage felt stitch sew" style="--c:var(--cream);--t:var(--thread-cream);margin-top:16px">
+      <details class="zip">
+        <summary><span class="teeth"></span>Shipping &amp; returns<span class="pull"></span></summary>
+        <div class="lining">Free shipping over forty dollars. Returns accepted within thirty days on unused skeins.</div>
+      </details>
+    </div>
+  </section>
+
+  <section class="section" id="data">
+    <h2 class="sew">Data &amp; status</h2>
+    <p class="lede sew">A table is a quilt: a woven header band, rows parting at dashed seams. Chips
+    are mini patches for compact labels, avatars are round patches with a whipstitched rim, and a
+    notice is a fabric strip pinned to the board. Loading states are a winding spinner or basting,
+    loose temporary stitches standing in for content that has not arrived yet.</p>
+    <div class="stage felt stitch sew" style="--c:var(--cream);--t:var(--thread-cream)">
+      <table class="quilt" style="--c:var(--cream)">
+        <thead><tr><th>Yarn</th><th>Weight</th><th>Left</th></tr></thead>
+        <tbody>
+          <tr><td>Rose merino</td><td>DK</td><td>340g</td></tr>
+          <tr><td>Sky shetland</td><td>4-ply</td><td>120g</td></tr>
+          <tr><td>Leaf alpaca</td><td>Aran</td><td>85g</td></tr>
+        </tbody>
+      </table>
+      <div class="row" style="margin-top:18px">
+        <span class="chip" style="--c:var(--leaf)">in stock</span>
+        <span class="chip" style="--c:var(--butter)">low stock</span>
+        <span class="chip" style="--c:var(--rose)">sold out</span>
+        <span class="avatar" style="--c:var(--sky)">JD</span>
+        <span class="spinner" style="--c:var(--rose)" role="status" aria-label="loading"></span>
+      </div>
+      <div class="notice sew" style="margin-top:18px;--c:var(--butter)">Hand wash only: this dye lot runs in warm water.</div>
+      <div class="row" style="margin-top:18px;display:grid;gap:10px">
+        <div class="basting" style="height:18px;width:65%"></div>
+        <div class="basting" style="height:18px;width:45%"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="content">
+    <h2 class="sew">Long-form content</h2>
+    <p class="lede sew">Reading views stay in the material too: quotes carry a yarn selvedge,
+    bullets are french knots, inline code is a small pattern label, and code blocks are the one
+    place a lined paper accent is allowed, since even a wool world needs somewhere to write things
+    down.</p>
+    <div class="stage felt stitch sew" style="--c:var(--cream);--t:var(--thread-cream)">
+      <blockquote class="selvedge" style="--c:var(--plum)">The fastest stitch is the one you only sew once.</blockquote>
+      <p>Press <kbd class="pattern">Ctrl</kbd> + <kbd class="pattern">K</kbd> to search, or call
+      <code class="pattern">woolwork.toast()</code> from anywhere in your code.</p>
+      <ul class="knots" style="--t:var(--thread-rose)">
+        <li>French-knot bullets, one per item</li>
+        <li>Spacing and ink come from the shared tokens</li>
+      </ul>
+      <pre class="pattern">&lt;body class="board"&gt;
+  &lt;div class="felt stitch"&gt;a patch&lt;/div&gt;
+&lt;/body&gt;</pre>
+    </div>
+  </section>
+
+</main>
+<script src="woolwork.js" defer></script>
+<script>
+var wsPin = document.getElementById('ws-pin');
+var wsOpen = document.getElementById('ws-open-pin');
+if(wsPin && wsOpen){ wsOpen.addEventListener('click', function(){ wsPin.showModal(); }); }
+</script>
+</body></html>
