@@ -1,42 +1,42 @@
 [submodule ".agents/skills/monolith-audit-skill"]
-	path = .agents/skills/monolith-audit-skill
+	path = .agents/skills/monolith-audit
 	url = https://github.com/LeeorNahum/monolith-audit-skill.git
 [submodule ".agents/skills/claude-code-compat-skill"]
-	path = .agents/skills/claude-code-compat-skill
+	path = .agents/skills/claude-code-compat
 	url = https://github.com/LeeorNahum/claude-code-compat-skill.git
 [submodule ".agents/skills/anti-backrooms"]
 	path = .agents/skills/anti-backrooms
 	url = https://github.com/LeeorNahum/anti-backrooms.git
 [submodule ".agents/skills/skill-forge-skill"]
-	path = .agents/skills/skill-forge-skill
+	path = .agents/skills/skill-forge
 	url = https://github.com/LeeorNahum/skill-forge-skill.git
 [submodule ".agents/skills/design-md-skill"]
-	path = .agents/skills/design-md-skill
+	path = .agents/skills/design-md
 	url = https://github.com/LeeorNahum/design-md-skill.git
 [submodule ".agents/skills/web-repository-opinions-skill"]
-	path = .agents/skills/web-repository-opinions-skill
+	path = .agents/skills/web-repository-opinions
 	url = https://github.com/LeeorNahum/web-repository-opinions-skill.git
 [submodule ".agents/skills/provider-onboarding-skill"]
-	path = .agents/skills/provider-onboarding-skill
+	path = .agents/skills/provider-onboarding
 	url = https://github.com/LeeorNahum/provider-onboarding-skill.git
 [submodule ".agents/skills/skill-sync-skill"]
-	path = .agents/skills/skill-sync-skill
+	path = .agents/skills/skill-sync
 	url = https://github.com/LeeorNahum/skill-sync-skill.git
 [submodule ".agents/skills/convex-compendium-skill"]
-	path = .agents/skills/convex-compendium-skill
+	path = .agents/skills/convex-compendium
 	url = https://github.com/LeeorNahum/convex-compendium-skill.git
 [submodule ".agents/skills/branch-promote-skill"]
-	path = .agents/skills/branch-promote-skill
+	path = .agents/skills/branch-promote
 	url = https://github.com/LeeorNahum/branch-promote-skill.git
 [submodule ".agents/skills/no-em-dashes-skill"]
-	path = .agents/skills/no-em-dashes-skill
+	path = .agents/skills/no-em-dashes
 	url = https://github.com/LeeorNahum/no-em-dashes-skill.git
 [submodule ".agents/skills/release-versioning-skill"]
-	path = .agents/skills/release-versioning-skill
+	path = .agents/skills/release-versioning
 	url = https://github.com/LeeorNahum/release-versioning-skill.git
 [submodule ".agents/skills/naming-check-skill"]
-	path = .agents/skills/naming-check-skill
+	path = .agents/skills/naming-check
 	url = https://github.com/LeeorNahum/naming-check-skill.git
 [submodule ".agents/skills/woolwork-ui-skill"]
-	path = .agents/skills/woolwork-ui-skill
+	path = .agents/skills/woolwork-ui
 	url = https://github.com/LeeorNahum/woolwork-ui-skill.git
