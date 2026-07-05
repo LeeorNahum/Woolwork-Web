@@ -40,3 +40,4 @@
 [submodule ".agents/skills/woolwork-ui-skill"]
 	path = .agents/skills/woolwork-ui
 	url = https://github.com/LeeorNahum/woolwork-ui-skill.git
+	branch = dev

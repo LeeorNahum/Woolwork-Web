@@ -1,4 +1,4 @@
-/* WOOLWORK v1.0.0 progressive enhancement.
+/* WOOLWORK v1.1.0 progressive enhancement.
    Everything renders without this file; it only adds motion and physics. */
 (function(){
   'use strict';
@@ -68,6 +68,20 @@
     if(!e.persisted) return;
     document.querySelectorAll('.sew').forEach(armReveal);
   });
+  /* Sewn elements mounted after load (by a framework, htmx, or plain DOM
+     work) arm the same way, keeping the whole kit live for late content. */
+  if('MutationObserver' in window){
+    new MutationObserver(function(muts){
+      muts.forEach(function(m){
+        for(var i = 0; i < m.addedNodes.length; i++){
+          var n = m.addedNodes[i];
+          if(n.nodeType !== 1) continue;
+          if(n.classList.contains('sew')) armReveal(n);
+          if(n.querySelectorAll) n.querySelectorAll('.sew').forEach(armReveal);
+        }
+      });
+    }).observe(document.documentElement, {childList:true, subtree:true});
+  }
 
   /* ---- Sew-check press phases: stroke one on press, stroke two on release ---- */
   document.addEventListener('pointerdown', function(e){
@@ -79,7 +93,16 @@
   }, {passive:true});
 
   /* ---- Tabs: one selected folder tab, its panel shown, siblings hidden ----
-     Markup: .tabs > button[aria-controls=panelId]; panels are .tab-panel. */
+     Markup: .tabs > button[aria-controls=panelId]; panels are .tab-panel.
+     Panels sync to the selected tab at init, so markup can ship every panel
+     visible and no-JS readers still get all the content. */
+  function syncTabs(group){
+    group.querySelectorAll('button[aria-controls]').forEach(function(b){
+      var panel = document.getElementById(b.getAttribute('aria-controls'));
+      if(panel) panel.hidden = b.getAttribute('aria-selected') !== 'true';
+    });
+  }
+  document.querySelectorAll('.tabs').forEach(syncTabs);
   document.addEventListener('click', function(e){
     var tab = e.target.closest ? e.target.closest('.tabs>button') : null;
     if(!tab || !tab.getAttribute('aria-controls')) return;
@@ -92,18 +115,19 @@
     });
   });
 
-  /* ---- Buttonhole toggles ---- */
-  document.querySelectorAll('.buttonhole').forEach(function(t){
-    t.addEventListener('click', function(){
+  /* ---- Buttonhole toggles and hamburger strands ----
+     Delegated like everything else, so toggles added after load are live too. */
+  document.addEventListener('click', function(e){
+    if(!e.target.closest) return;
+    var t = e.target.closest('.buttonhole');
+    if(t){
       t.setAttribute('aria-pressed', t.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
-    });
-  });
-
-  /* ---- Hamburger strands ---- */
-  document.querySelectorAll('.strands').forEach(function(b){
-    b.addEventListener('click', function(){
+      return;
+    }
+    var b = e.target.closest('.strands');
+    if(b){
       b.setAttribute('aria-expanded', b.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
-    });
+    }
   });
 
   /* ---- Fabric flap dropdowns: close on outside pointerdown ---- */

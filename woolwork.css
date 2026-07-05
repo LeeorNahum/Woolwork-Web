@@ -1,8 +1,8 @@
-/* ============ WOOLWORK v1.0.0 ============
+/* ============ WOOLWORK v1.1.0 ============
    A wool, felt, and yarn material system for the web.
    Laws: one top-left light · nothing flat · nothing straight · everything attached · everything soft. */
 :root{
-  --ww-version:"1.0.0";
+  --ww-version:"1.1.0";
   /* board + dyed wool palette (heathered by texture, never flat) */
   --board:#e3ddd0; --cream:#f6efdf; --rose:#e2707e; --butter:#f0c05a; --leaf:#7fae6a;
   --sky:#6fa8c9; --plum:#9a7bb0; --cocoa:#7a5c49; --ink:#463527; --ink-soft:#7d6a56;
@@ -51,6 +51,7 @@ h1,h2,h3,.display{font-family:var(--font-display)}
   border-radius:16px 19px 15px 20px/18px 15px 21px 16px;
   box-shadow:inset 0 2px 0 var(--hi),inset 2px 0 0 rgba(255,252,242,.12),
     inset 0 -4px 7px var(--lo),0 2px 2px -1px rgba(30,20,12,.3),0 10px 16px -10px rgba(30,20,12,.3);
+  transition:background-color .4s,color .4s;
 }
 .felt.deep{box-shadow:inset 0 3px 0 var(--hi),inset 0 -5px 9px var(--lo),
   0 3px 2px -1px rgba(30,20,12,.35),0 16px 26px -14px rgba(30,20,12,.4)}
@@ -62,6 +63,7 @@ h1,h2,h3,.display{font-family:var(--font-display)}
   border-radius:14px 17px 13px 18px/16px 13px 18px 14px;
   box-shadow:inset 0 3px 0 var(--hi),inset 0 -5px 8px var(--lo),
     0 2px 2px -1px rgba(30,20,12,.3),0 12px 18px -10px rgba(30,20,12,.35);
+  transition:background-color .4s,color .4s;
 }
 /* ---------- MATERIAL: YARN STRAND ---------- */
 .yarn{height:9px;border-radius:6px;background-color:var(--c,var(--rose));
@@ -85,7 +87,7 @@ h1,h2,h3,.display{font-family:var(--font-display)}
   border-radius:14px 17px 13px 18px/16px 13px 18px 14px;
   box-shadow:inset 0 2px 0 var(--hi),inset 0 -4px 6px var(--lo),
     0 3px 2px -1px rgba(30,20,12,.35),0 9px 12px -8px rgba(30,20,12,.35);
-  transition:translate .5s var(--spring),box-shadow .22s ease;
+  transition:translate .5s var(--spring),box-shadow .22s ease,background-color .4s;
 }
 .btn-patch::after{content:"";position:absolute;inset:6px;border:2.5px dashed var(--t);
   border-radius:inherit;opacity:.85;pointer-events:none}
@@ -203,13 +205,13 @@ h1,h2,h3,.display{font-family:var(--font-display)}
   background:color-mix(in srgb,var(--cream) 82%,black 6%);
   box-shadow:inset 0 3px 5px rgba(30,18,10,.3)}
 .spool .fill{position:absolute;inset:3px auto 3px 3px;width:var(--p,60%);border-radius:6px;
-  background-color:var(--fc,var(--rose));
+  background-color:var(--fc,var(--c,var(--rose)));
   background-image:repeating-linear-gradient(60deg,rgba(255,255,255,.35) 0 4px,rgba(0,0,0,.18) 4px 8px,transparent 8px 12px);
   box-shadow:inset 0 2px 1px rgba(255,255,255,.35),inset 0 -2px 2px rgba(0,0,0,.28);
   transition:width .6s var(--spring)}
 .spool .fill::after{content:"";position:absolute;right:-9px;top:50%;width:20px;height:20px;margin-top:-10px;border-radius:50%;
   background:radial-gradient(circle at 34% 30%,rgba(255,255,255,.45),transparent 45%),
-    repeating-conic-gradient(from 20deg,rgba(255,255,255,.25) 0 14deg,rgba(0,0,0,.15) 14deg 28deg),var(--fc,var(--rose));
+    repeating-conic-gradient(from 20deg,rgba(255,255,255,.25) 0 14deg,rgba(0,0,0,.15) 14deg 28deg),var(--fc,var(--c,var(--rose)));
   box-shadow:0 2px 3px rgba(30,20,12,.4)}
 /* ---------- WOVEN LABEL (chip / badge / tab): a clothing label tacked
    down at each end with a single stitch (the two dots are tack stitches) */
@@ -264,11 +266,18 @@ a.thread-link:visited{background-image:url("data:image/svg+xml;utf8,<svg xmlns='
 .flap .panel button{display:block;width:100%;text-align:left;border:0;cursor:pointer;color:var(--ink);
   font:600 .95rem var(--font-body);padding:9px 12px;border-radius:9px;background:transparent}
 .flap .panel button:hover{background:color-mix(in srgb,var(--butter) 40%,transparent)}
-/* ---------- MODAL: a patch pinned over the board with safety pins ---------- */
-dialog.pinned{border:0;padding:0;background:transparent;max-width:min(92vw,460px);overflow:visible}
+/* ---------- MODAL: a felt patch pinned over the board with safety pins ----------
+   The dialog itself is the patch: felt material, stitchable, pins allowed to
+   overhang via overflow:visible. No inner wrapper is needed. */
+dialog.pinned{border:0;padding:28px 26px 24px;color:var(--ink);
+  max-width:min(92vw,460px);overflow:visible;
+  background-color:var(--c,var(--cream));background-image:var(--streak),var(--grain);
+  background-blend-mode:soft-light,overlay;background-size:240px 240px,140px 140px;
+  border-radius:16px 19px 15px 20px/18px 15px 21px 16px;
+  box-shadow:inset 0 3px 0 var(--hi),inset 0 -5px 9px var(--lo),
+    0 3px 2px -1px rgba(30,20,12,.35),0 16px 26px -14px rgba(30,20,12,.4)}
 dialog.pinned::backdrop{background:rgba(40,28,18,.45);backdrop-filter:blur(1.5px)}
-dialog.pinned .patch{padding:28px 26px 24px;position:relative}
-dialog.pinned[open] .patch{animation:pindrop .55s var(--spring)}
+dialog.pinned[open]{animation:pindrop .55s var(--spring)}
 @keyframes pindrop{from{transform:translateY(-26px) rotate(-2deg);opacity:0}to{transform:none;opacity:1}}
 .safety-pin{position:absolute;width:52px;height:16px;pointer-events:none;
   background:linear-gradient(#e8e2d2,#b6ac93);border-radius:8px;
@@ -279,11 +288,11 @@ dialog.pinned[open] .patch{animation:pindrop .55s var(--spring)}
 .safety-pin.tr{right:-14px;top:-7px;rotate:24deg}
 /* ---------- TOOLTIP: a paper tag tied on with thread ---------- */
 [data-tip]{position:relative}
-[data-tip]::after{content:attr(data-tip);position:absolute;left:50%;bottom:calc(100% + 14px);translate:-50% 4px;
+[data-tip]::after{content:attr(data-tip);position:absolute;left:50%;bottom:calc(100% + 14px);translate:-50% 4px;z-index:61;
   background:var(--paper);color:var(--ink);font:600 .78rem var(--font-body);padding:6px 10px;border-radius:6px 8px 7px 6px;
   box-shadow:0 2px 3px rgba(30,20,12,.35),inset 0 0 0 1px rgba(122,92,73,.15);
   white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s,translate .35s var(--spring)}
-[data-tip]::before{content:"";position:absolute;left:50%;bottom:100%;height:14px;width:2px;translate:-50%;
+[data-tip]::before{content:"";position:absolute;left:50%;bottom:100%;height:14px;width:2px;translate:-50%;z-index:61;
   background:repeating-linear-gradient(to bottom,var(--thread-cream) 0 3px,transparent 3px 5px);
   opacity:0;transition:opacity .2s}
 [data-tip]:hover::after,[data-tip]:focus-visible::after{opacity:1;translate:-50% 0}
@@ -319,8 +328,11 @@ dialog.pinned[open] .patch{animation:pindrop .55s var(--spring)}
 .snap-radio:focus-visible{outline:3px dashed var(--thread-sky);outline-offset:2px}
 /* ---------- SELECT: a pocket with a thread pull ---------- */
 select.pocket{appearance:none;cursor:pointer;padding-right:40px;
-  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='10'><path d='M2 2 L8 8 L14 2' fill='none' stroke='%237a5c49' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/></svg>");
-  background-repeat:no-repeat;background-position:right 14px center}
+  /* The thread pull is drawn twice, a light copy under a cocoa copy, so it
+     stays legible on both day and night pockets (a data URI cannot read tokens). */
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='12'><path d='M2 3.2 L8 9.2 L14 3.2' fill='none' stroke='rgba(255,252,242,0.55)' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/><path d='M2 2 L8 8 L14 2' fill='none' stroke='%237a5c49' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/></svg>"),var(--grain);
+  background-repeat:no-repeat,repeat;background-position:right 14px center,0 0;
+  background-size:16px 12px,140px 140px;background-blend-mode:normal,overlay}
 textarea.pocket{min-height:96px;resize:vertical;font:inherit}
 /* ---------- TABS: felt folder tabs stitched onto a shared panel ---------- */
 .tabs{display:flex;gap:8px;padding:0 14px;position:relative;z-index:1}
@@ -396,6 +408,16 @@ table.quilt tbody tr:hover td{background-color:color-mix(in srgb,var(--c,var(--c
   background:conic-gradient(from 0deg,transparent 0 70%,rgba(255,252,242,.55) 78%,transparent 92%);
   animation:wind 1.1s linear infinite}
 @keyframes wind{to{transform:rotate(360deg)}}
+/* ---------- POMPOM: a tied-off ball of yarn, pure decoration ----------
+   Denser wrap than the spinner and never animated; size it with width/height. */
+.pompom{display:inline-block;width:30px;height:30px;border-radius:50%;flex:none;position:relative;
+  background:
+    radial-gradient(circle at 34% 30%,rgba(255,255,255,.42),transparent 46%),
+    repeating-conic-gradient(from 8deg,rgba(255,255,255,.26) 0 8deg,rgba(0,0,0,.17) 8deg 16deg),
+    var(--c,var(--rose));
+  box-shadow:inset 0 -3px 4px rgba(0,0,0,.3),inset 0 2px 2px rgba(255,255,255,.35),0 2px 2px rgba(30,20,12,.3)}
+.pompom::before{content:"";position:absolute;inset:22%;border-radius:50%;
+  background:repeating-conic-gradient(from 100deg,rgba(255,252,242,.18) 0 12deg,transparent 12deg 24deg)}
 /* ---------- BASTING: skeleton placeholders held by loose temporary stitches ---------- */
 .basting{border-radius:12px;min-height:1em;
   background-color:color-mix(in srgb,var(--cream) 70%,var(--board));
@@ -429,6 +451,12 @@ figure.photo{margin:0;display:inline-block;padding:10px 10px 8px;rotate:-.7deg;
   box-shadow:inset 0 2px 0 var(--hi),inset 0 -3px 5px var(--lo),0 3px 2px -1px rgba(30,20,12,.32),0 12px 18px -12px rgba(30,20,12,.4)}
 figure.photo img{display:block;max-width:100%;border-radius:8px;filter:saturate(.92) contrast(.97)}
 figure.photo figcaption{padding:7px 4px 2px;font-size:.85rem;color:var(--ink-soft);text-align:center}
+/* ---------- EMBROIDER: display lettering as raised thread ----------
+   The lifted-thread shadow pair makes a heading read as embroidery on the felt:
+   light catches the top of the stitches (highlight above the glyph edge),
+   occlusion falls below. Ink stays a token. */
+.embroider{font-family:var(--font-display);color:var(--ink);
+  text-shadow:0 -1px 0 var(--hi),0 2px 0 var(--lo)}
 /* ---------- BOARD-LEVEL DETAILS: selection and scrollbars are dyed too ---------- */
 ::selection{background:color-mix(in srgb,var(--plum) 45%,transparent);color:var(--ink)}
 body.board{scrollbar-color:var(--cocoa) color-mix(in srgb,var(--board) 80%,black 6%)}
@@ -442,12 +470,15 @@ body.board::-webkit-scrollbar-thumb{background:var(--cocoa);border-radius:8px;bo
    so server-rendered pages without JS stay fully visible. */
 .ww-js .sew{opacity:0;translate:0 12px;rotate:.35deg;
   transition:opacity .45s ease var(--sew-delay,0s),translate .65s var(--spring) var(--sew-delay,0s),rotate .65s var(--spring) var(--sew-delay,0s)}
-.ww-js .sew.on{opacity:1;translate:0 0;rotate:0deg}
+/* The settled state is translate/rotate NONE, not zero: a zero value still
+   creates a stacking context, which would trap dropdown panels and tooltips
+   under later sibling patches forever. None releases it after the settle. */
+.ww-js .sew.on{opacity:1;translate:none;rotate:none}
 .stitch-thread{position:absolute;top:8px;left:8px;pointer-events:none;overflow:visible}
 .stitch-thread rect{fill:none;stroke:var(--t,var(--cocoa));stroke-width:2.5;stroke-linecap:round;opacity:.85}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition-duration:.01s!important}
-  .ww-js .sew{opacity:1;translate:0 0;rotate:0deg}
+  .ww-js .sew{opacity:1;translate:none;rotate:none}
   .spinner::before{animation:none}
   .basting{animation:none;opacity:.7}
 }
