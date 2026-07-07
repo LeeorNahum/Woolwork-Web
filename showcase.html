@@ -12,7 +12,14 @@
 <meta property="og:description" content="Every Woolwork component, live: felt patches, sewn buttons, pockets, snap fasteners, zippers, pinned notes, quilted tables, and the rest of the craft table.">
 <meta property="og:url" content="https://woolwork.dev/showcase">
 <meta property="og:image" content="https://woolwork.dev/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A felt patch pinned to a burlap board under a string of bunting, reading Woolwork: turn any website into wool, felt, and yarn.">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Woolwork components">
+<meta name="twitter:description" content="Every Woolwork component, live: felt patches, sewn buttons, pockets, snap fasteners, zippers, pinned notes, quilted tables, and the rest of the craft table.">
+<meta name="twitter:image" content="https://woolwork.dev/og.png">
+<meta name="twitter:image:alt" content="A felt patch pinned to a burlap board under a string of bunting, reading Woolwork: turn any website into wool, felt, and yarn.">
 <meta name="theme-color" content="#e3ddd0">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/baloo2-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -192,9 +199,9 @@
 
   <section class="section" id="overlays">
     <h2 class="sew">Overlays, seams &amp; feedback</h2>
-    <p class="lede sew">A modal is a felt note pinned over the board with safety pins. A tooltip is
-    a paper tag tied on with thread. An accordion unzips. A divider is a seam: a running stitch
-    across a pressed crease.</p>
+    <p class="lede sew">A modal is a felt note clipped up over the board; press the board around it
+    and it comes back down. A tooltip is a paper tag tied on with thread. An accordion unzips. A
+    divider is a seam: a running stitch across a pressed crease.</p>
     <div class="stage felt stitch sew" style="--c:var(--cream);--t:var(--thread-cream)">
       <div class="row">
         <button type="button" class="btn-patch" style="--c:var(--rose);--t:var(--thread-rose)" id="ws-open-pin">Pin up a note</button>
@@ -202,7 +209,7 @@
         <span data-tip="A paper tag, tied on with thread" tabindex="0">hover or focus for a tooltip</span>
       </div>
       <dialog class="pinned" id="ws-pin">
-        <div class="safety-pin tl"></div><div class="safety-pin tr"></div>
+        <div class="clip tl"></div><div class="clip tr"></div>
         <h3 style="margin:0 0 8px">Care note</h3>
         <p style="margin:0 0 16px">This yarn runs slightly warm in the dye lot; wash separately the first time.</p>
         <button type="button" class="btn-patch" style="--c:var(--sky);--t:var(--thread-sky)" onclick="document.getElementById('ws-pin').close()">Got it</button>
@@ -258,8 +265,9 @@
     <div class="stage felt stitch sew" style="--c:var(--cream);--t:var(--thread-cream)">
       <h3 class="embroider" style="font-size:1.6rem;margin:0 0 12px">An embroidered heading</h3>
       <blockquote class="selvedge" style="--c:var(--plum)">The fastest stitch is the one you only sew once.</blockquote>
-      <p>Press <kbd class="pattern">Ctrl</kbd> + <kbd class="pattern">K</kbd> to search, or call
-      <code class="pattern">woolwork.toast()</code> from anywhere in your code.</p>
+      <p>Keyboard keys such as <kbd class="pattern">Ctrl</kbd> and <kbd class="pattern">K</kbd> read
+      as small raised buttons, and inline code such as <code class="pattern">class="felt stitch"</code>
+      sits on a woven pattern label.</p>
       <ul class="knots" style="--t:var(--thread-rose)">
         <li>French-knot bullets, one per item</li>
         <li>Spacing and ink come from the shared tokens</li>

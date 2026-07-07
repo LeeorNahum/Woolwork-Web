@@ -1,7 +1,7 @@
 ---
 version: alpha
 name: Woolwork
-description: A hand-stitched world of wool, felt, and yarn. Tokens mirror the Woolwork kit (woolwork.css v1.1.1), which is the wired token source for this repo.
+description: A hand-stitched world of wool, felt, and yarn. Tokens mirror the Woolwork kit (woolwork.css v1.2.0), which is the wired token source for this repo.
 colors:
   board: "#e3ddd0"
   cream: "#f6efdf"
@@ -77,7 +77,7 @@ components:
 
 Woolwork turns an interface into a believable craft table. The page background is a burlap work board; every element on it is a wool, felt, or yarn object attached to that board by a nameable fastening: sewn, buttoned, snapped, pinned, zipped, or pocketed. The feeling is warm, handmade, and physical, closer to a toy shop than a dashboard, but everything remains a real, accessible control underneath.
 
-The wired token source in this repository is `woolwork.css` (the kit, v1.1.1). This file is the reference those tokens follow; when the kit re-dyes, this file updates in the same change.
+The wired token source in this repository is `woolwork.css` (the kit, v1.2.0). This file is the reference those tokens follow; when the kit re-dyes, this file updates in the same change.
 
 ## Colors
 
@@ -91,6 +91,8 @@ Every color is dyed wool, desaturated and warmed, never a pure digital hue.
 - **Paper (#fbf6ea):** a small accent for tags, tooltips, and code sheets only; wool carries the identity.
 
 Night mode is a token override, not a second palette: felts deepen, threads lighten, the lamp dims. Never hard-code a color in markup; every dye is a token so the night flip works without per-element fixes.
+
+Label ink is chosen by the surface itself: pale felts (cream, butter) carry near-ink dark lettering, deep felts (rose, leaf, sky, plum) carry near-cream light lettering, both re-tinted with the felt's own hue. The kit derives this from `--c`, so re-dyeing or the night flip re-chooses the ink with no per-element fixes; override a single element with `--label` if a design ever needs to.
 
 ## Typography
 
@@ -117,8 +119,8 @@ Nothing straight. Patches use irregular, hand-cut corner radii (each corner slig
 - **Cards (`.felt`, `.knit`):** felt or stockinette-knit patches; `.stitch` adds the sewn border, `.sew` the place-then-stitch arrival.
 - **Inputs (`.pocket`):** slits cut into the felt with contents tucked inside; focus wraps a rose thread ring.
 - **Checkboxes (`.sew-check`) and radios (`.snap-radio`):** four-hole buttons cross-stitched shut and snap fasteners.
-- **Overlays:** modals are felt notes pinned up with safety pins; dropdowns are fabric flaps; toasts are patches tacked to the board corner.
-- **Decoration:** pompoms and woven tags, sparingly, dyed from the same tokens.
+- **Overlays:** modals are felt notes clipped up over the board (pressing the board around one closes it); dropdowns are fabric flaps; toasts are patches tacked to the board corner.
+- **Decoration:** pompoms, woven tags, and steel gem paper clips (`.clip`) holding patches down, sparingly, dyed from the same tokens.
 
 ## Do's and Don'ts
 
