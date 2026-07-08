@@ -119,7 +119,7 @@ Nothing straight. Patches use irregular, hand-cut corner radii (each corner slig
 - **Cards (`.felt`, `.knit`):** felt or stockinette-knit patches; `.stitch` adds the sewn border, `.sew` the place-then-stitch arrival.
 - **Inputs (`.pocket`):** slits cut into the felt with contents tucked inside; focus wraps a rose thread ring.
 - **Checkboxes (`.sew-check`) and radios (`.snap-radio`):** four-hole buttons cross-stitched shut and snap fasteners.
-- **Overlays:** modals are felt notes clipped up over the board (pressing the board around one closes it); dropdowns are slips of ruled paper (`.flap .panel`) slotted out from behind their trigger; toasts stack in a corner tray, each dismissable by its yarn cross or a swipe.
+- **Overlays:** modals are felt notes clipped up over the board (pressing the board around one closes it); dropdowns are slips of paper (`.flap .panel`) slotted out from behind their trigger; toasts stack in a corner tray, each dismissable by its yarn cross or a swipe.
 - **Icons in yarn:** a close/dismiss is a yarn cross (`.yarn-x`), the exact shape the hamburger settles into; ratings are die-cut sticker stars (`.stars` / `.star`).
 - **Decoration:** pompoms, woven tags, and steel gem paper clips (`.clip`, placed `.tl`/`.tc`/`.tr`) holding patches down, sparingly, dyed from the same tokens.
 
