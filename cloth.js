@@ -91,22 +91,37 @@
       /* Apex hangs along the segment normal on the gravity side
          (canvas y grows downward). */
       var ax = mx - (dy / d) * flagLen, ay = my + (dx / d) * flagLen;
+      ctx.save();
       ctx.beginPath();
       ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.lineTo(ax, ay);
       ctx.closePath();
       ctx.fillStyle = felts[((i - 1) / 2) % felts.length];
       ctx.fill();
-      /* Felt reads through light, not flatness: occluded lower edge,
-         lit top edge, and a small stitched hem. */
-      ctx.strokeStyle = 'rgba(30,20,12,.22)'; ctx.lineWidth = 1.5; ctx.stroke();
+      /* Felt reads through light, not flatness: clip to the pennant and lay a
+         gradient so light gathers along the top band and shadow pools at the
+         hanging tip, giving each flag real thickness. */
+      ctx.clip();
+      var shade = ctx.createLinearGradient(mx, my, ax, ay);
+      shade.addColorStop(0, 'rgba(255,252,242,0.34)');
+      shade.addColorStop(0.32, 'rgba(255,252,242,0)');
+      shade.addColorStop(1, 'rgba(30,18,10,0.28)');
+      ctx.fillStyle = shade;
+      ctx.fillRect(0, 0, W, H);
+      ctx.restore();
+      /* Occluded outline, lit top hem, and a stitched hem just below it. */
+      ctx.beginPath();
+      ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.lineTo(ax, ay); ctx.closePath();
+      ctx.lineJoin = 'round';
+      ctx.strokeStyle = 'rgba(30,20,12,.24)'; ctx.lineWidth = 1.3; ctx.stroke();
       ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
-      ctx.strokeStyle = 'rgba(255,252,242,.4)'; ctx.lineWidth = 2; ctx.stroke();
+      ctx.lineCap = 'round';
+      ctx.strokeStyle = 'rgba(255,252,242,.5)'; ctx.lineWidth = 2; ctx.stroke();
       ctx.save();
       ctx.setLineDash([4, 3.5]);
       ctx.beginPath();
       ctx.moveTo(a.x * .82 + ax * .18, a.y * .82 + ay * .18);
       ctx.lineTo(b.x * .82 + ax * .18, b.y * .82 + ay * .18);
-      ctx.strokeStyle = 'rgba(255,252,242,.5)'; ctx.lineWidth = 1.6; ctx.stroke();
+      ctx.strokeStyle = 'rgba(255,252,242,.55)'; ctx.lineWidth = 1.6; ctx.stroke();
       ctx.restore();
     }
     /* The yarn line itself, over the pennant tops. */

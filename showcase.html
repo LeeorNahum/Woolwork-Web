@@ -44,6 +44,7 @@
       <a class="btn-patch" style="--c:var(--leaf);--t:var(--thread-leaf)" href="#forms">Forms</a>
       <a class="btn-patch" style="--c:var(--sky);--t:var(--thread-sky)" href="#navigation">Navigation</a>
       <a class="btn-patch" style="--c:var(--plum);--t:var(--thread-plum)" href="#overlays">Overlays</a>
+      <a class="btn-patch" style="--c:var(--leaf);--t:var(--thread-leaf)" href="#icons">Icons</a>
       <a class="btn-patch" style="--c:var(--cream);--t:var(--thread-cream)" href="#data">Data</a>
       <a class="btn-patch" style="--c:var(--butter);--t:var(--thread-butter)" href="#content">Content</a>
     </nav>
@@ -182,7 +183,7 @@
       <div class="row">
         <details class="flap">
           <summary class="btn-patch" style="--c:var(--sky);--t:var(--thread-sky)">More options</summary>
-          <div class="panel felt" style="--c:var(--cream)">
+          <div class="panel">
             <button type="button">Duplicate</button>
             <button type="button">Archive</button>
             <button type="button">Delete</button>
@@ -210,6 +211,7 @@
       </div>
       <dialog class="pinned" id="ws-pin">
         <div class="clip tl"></div><div class="clip tr"></div>
+        <button type="button" class="yarn-x" aria-label="close" style="position:absolute;top:14px;right:16px" onclick="document.getElementById('ws-pin').close()"><span class="yarn" style="--c:var(--cocoa)"></span><span class="yarn" style="--c:var(--cocoa)"></span></button>
         <h3 style="margin:0 0 8px">Care note</h3>
         <p style="margin:0 0 16px">This yarn runs slightly warm in the dye lot; wash separately the first time.</p>
         <button type="button" class="btn-patch" style="--c:var(--sky);--t:var(--thread-sky)" onclick="document.getElementById('ws-pin').close()">Got it</button>
@@ -221,6 +223,32 @@
         <summary><span class="teeth"></span>Shipping &amp; returns<span class="pull"></span></summary>
         <div class="lining">Free shipping over forty dollars. Returns accepted within thirty days on unused skeins.</div>
       </details>
+    </div>
+  </section>
+
+  <section class="section" id="icons">
+    <h2 class="sew">Stars &amp; string</h2>
+    <p class="lede sew">More things made of the same yarn. Sticker stars for ratings, die-cut with a
+    white rim and stuck on at a slight tilt. And a yarn cross, the exact shape the hamburger settles
+    into, standing alone as a close or dismiss anywhere you need one; it also rides on every stacked
+    toast.</p>
+    <div class="stage felt stitch sew" style="--c:var(--cream);--t:var(--thread-cream)">
+      <div class="row">
+        <span class="field-label" style="margin:0">Rating</span>
+        <span class="stars" aria-label="four of five stars">
+          <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star empty"></span>
+        </span>
+        <span class="stars" style="margin-left:18px" aria-label="two of five stars">
+          <span class="star" style="--c:var(--rose)"></span><span class="star" style="--c:var(--rose)"></span><span class="star empty"></span><span class="star empty"></span><span class="star empty"></span>
+        </span>
+      </div>
+      <div class="row" style="margin-top:20px">
+        <span class="field-label" style="margin:0">Yarn cross</span>
+        <button type="button" class="yarn-x" aria-label="close"><span class="yarn" style="--c:var(--thread-rose)"></span><span class="yarn" style="--c:var(--thread-rose)"></span></button>
+        <button type="button" class="yarn-x" aria-label="close"><span class="yarn" style="--c:var(--thread-sky)"></span><span class="yarn" style="--c:var(--thread-sky)"></span></button>
+        <button type="button" class="yarn-x" aria-label="close"><span class="yarn" style="--c:var(--cocoa)"></span><span class="yarn" style="--c:var(--cocoa)"></span></button>
+        <span class="cap">Hover to twist. It is the open state of the hamburger, on its own.</span>
+      </div>
     </div>
   </section>
 
