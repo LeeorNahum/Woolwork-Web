@@ -117,11 +117,11 @@ Nothing straight. Patches use irregular, hand-cut corner radii (each corner slig
 
 - **Buttons (`.btn-patch`):** felt patches with a stitched inset border, padded 14px vertically and 24px horizontally; hover lifts 1.5px, press settles 1.5px into a deepened inset shadow. Dye per instance with `--c`/`--t` token pairs.
 - **Cards (`.felt`, `.knit`):** felt or stockinette-knit patches; `.stitch` adds the sewn border, `.sew` the place-then-stitch arrival.
-- **Inputs (`.pocket`):** slits cut into the felt with contents tucked inside; focus wraps a rose thread ring.
+- **Inputs (`.pocket`):** text fields are slits cut into the felt; selects are paper choice slips tucked into dark slots. Focus wraps a rose thread ring.
 - **Checkboxes (`.sew-check`) and radios (`.snap-radio`):** four-hole buttons cross-stitched shut and snap fasteners.
-- **Overlays:** modals are felt notes clipped up over the board (pressing the board around one closes it); dropdowns are slips of paper (`.flap .panel`) slotted out from behind their trigger; toasts stack in a corner tray, each dismissable by its yarn cross or a swipe.
+- **Navigation and overlays:** tabs stay on the panel as same-plane felt choices, with the selected one pressed inward inside a thread ring. Modals are felt notes clipped over the board; dropdowns are paper slips slotted behind their trigger; up to four toasts stack in a corner tray, each dismissable by its yarn cross or a swipe.
 - **Icons in yarn:** a close/dismiss is a yarn cross (`.yarn-x`), the exact shape the hamburger settles into; ratings are die-cut sticker stars (`.stars` / `.star`).
-- **Decoration:** pompoms, woven tags, and steel gem paper clips (`.clip`, placed `.tl`/`.tc`/`.tr`) holding patches down, sparingly, dyed from the same tokens.
+- **Decoration:** pompoms, woven tags, and thin bent-steel paper clips (`.clip`, placed `.tl`/`.tc`/`.tr`) holding patches down, sparingly, dyed from the same tokens.
 
 ## Do's and Don'ts
 

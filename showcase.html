@@ -14,12 +14,12 @@
 <meta property="og:image" content="https://woolwork.dev/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="A felt patch pinned to a burlap board under a string of bunting, reading Woolwork: turn any website into wool, felt, and yarn.">
+<meta property="og:image:alt" content="A cream felt patch clipped to a burlap board under colorful bunting, with the Woolwork name and two buttons.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Woolwork components">
 <meta name="twitter:description" content="Every Woolwork component, live: felt patches, sewn buttons, pockets, snap fasteners, zippers, pinned notes, quilted tables, and the rest of the craft table.">
 <meta name="twitter:image" content="https://woolwork.dev/og.png">
-<meta name="twitter:image:alt" content="A felt patch pinned to a burlap board under a string of bunting, reading Woolwork: turn any website into wool, felt, and yarn.">
+<meta name="twitter:image:alt" content="A cream felt patch clipped to a burlap board under colorful bunting, with the Woolwork name and two buttons.">
 <meta name="theme-color" content="#e3ddd0">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/baloo2-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -100,9 +100,9 @@
 
   <section class="section" id="forms">
     <h2 class="sew">Forms</h2>
-    <p class="lede sew">Every input is a pocket, a slit cut into the felt with the contents tucked
-    inside. Choices are snap fasteners or sewn checkboxes; ranges are a yarn-ball bead on a stitched
-    channel.</p>
+    <p class="lede sew">Text tucks into pockets cut through the felt, while a select is a paper
+    choice slip resting in a dark slot. Choices are snap fasteners or sewn checkboxes; ranges are a
+    yarn-ball bead on a stitched channel.</p>
     <div class="stage felt stitch sew" style="--c:var(--cream);--t:var(--thread-cream)">
       <div class="row" style="align-items:flex-start">
         <div class="field" style="flex:1">
@@ -115,6 +115,7 @@
           <select id="ws-yarn" class="pocket">
             <option>Lace</option><option>Fingering</option><option>DK</option><option>Aran</option>
           </select>
+          <span class="cap">The paper stays still while the native choice menu opens.</span>
         </div>
       </div>
       <div class="row" style="margin-top:16px">
@@ -148,21 +149,19 @@
 
   <section class="section" id="navigation">
     <h2 class="sew">Navigation</h2>
-    <p class="lede sew">Tabs are felt folder tabs; the selected one sits flush against the panel
-    while the rest tuck behind it. Breadcrumbs are small tags strung on one thread. Pagination is a
-    row of patches where the current page sits pressed into the board. A dropdown is a slip of paper
-    that slides out of a slot, and a hamburger is three strands that pull into a cross.</p>
+    <p class="lede sew">Tabs are felt choices sewn onto the panel; the selected one settles inward
+    inside a thread ring, without rising above the others. Breadcrumbs are small tags strung on one
+    thread. A dropdown is a slip of paper that slides out of a slot, and a menu is three strands that
+    pull into a tied cross.</p>
     <div class="stage felt stitch sew" style="--c:var(--cream);--t:var(--thread-cream)">
       <div class="tabs" role="tablist">
-        <button type="button" role="tab" id="ws-t1" aria-selected="true" aria-controls="ws-p1" style="--c:var(--butter)">Care</button>
-        <button type="button" role="tab" id="ws-t2" aria-selected="false" aria-controls="ws-p2" style="--c:var(--sky)">Shipping</button>
-        <button type="button" role="tab" id="ws-t3" aria-selected="false" aria-controls="ws-p3" style="--c:var(--rose)">Returns</button>
+        <button type="button" role="tab" id="ws-t1" aria-selected="true" aria-controls="ws-p1" style="--c:var(--butter);--t:var(--thread-butter)">Care</button>
+        <button type="button" role="tab" id="ws-t2" aria-selected="false" aria-controls="ws-p2" style="--c:var(--sky);--t:var(--thread-sky)">Shipping</button>
+        <button type="button" role="tab" id="ws-t3" aria-selected="false" aria-controls="ws-p3" style="--c:var(--rose);--t:var(--thread-rose)">Returns</button>
       </div>
-      <div class="felt" style="--c:var(--butter);padding:16px 18px">
-        <div class="tab-panel" role="tabpanel" aria-labelledby="ws-t1" id="ws-p1">Cold water, wool cycle, folded flat to dry.</div>
-        <div class="tab-panel" role="tabpanel" aria-labelledby="ws-t2" id="ws-p2">Ships in three to five days, tracked.</div>
-        <div class="tab-panel" role="tabpanel" aria-labelledby="ws-t3" id="ws-p3">Unused skeins returnable within thirty days.</div>
-      </div>
+      <div class="tab-panel felt" role="tabpanel" aria-labelledby="ws-t1" id="ws-p1" style="--c:var(--butter);padding:16px 18px">Cold water, wool cycle, folded flat to dry.</div>
+      <div class="tab-panel felt" role="tabpanel" aria-labelledby="ws-t2" id="ws-p2" style="--c:var(--sky);padding:16px 18px">Ships in three to five days, tracked.</div>
+      <div class="tab-panel felt" role="tabpanel" aria-labelledby="ws-t3" id="ws-p3" style="--c:var(--rose);padding:16px 18px">Unused skeins returnable within thirty days.</div>
     </div>
     <div class="stage felt stitch sew" style="--c:var(--cream);--t:var(--thread-cream)">
       <div class="row">
@@ -189,7 +188,7 @@
             <button type="button">Delete</button>
           </div>
         </details>
-        <button type="button" class="strands" aria-expanded="false" aria-label="menu">
+        <button type="button" class="strands" aria-expanded="false" aria-label="Open menu" style="--c:var(--thread-cream)">
           <span class="yarn" style="--c:var(--thread-cream)"></span>
           <span class="yarn" style="--c:var(--thread-cream)"></span>
           <span class="yarn" style="--c:var(--thread-cream)"></span>
@@ -207,6 +206,7 @@
       <div class="row">
         <button type="button" class="btn-patch" style="--c:var(--rose);--t:var(--thread-rose)" id="ws-open-pin">Pin up a note</button>
         <button type="button" class="btn-patch" style="--c:var(--butter);--t:var(--thread-butter)" onclick="woolwork.toast('Saved to your pattern box.')">Show a toast</button>
+        <button type="button" class="btn-patch" style="--c:var(--sky);--t:var(--thread-sky)" onclick="woolwork.toast('Pattern copied.');woolwork.toast('Yarn added.');woolwork.toast('Row counter reset.')">Stack three</button>
         <span data-tip="A paper tag, tied on with thread" tabindex="0">hover or focus for a tooltip</span>
       </div>
       <dialog class="pinned" id="ws-pin">
@@ -228,9 +228,9 @@
 
   <section class="section" id="icons">
     <h2 class="sew">Icons &amp; stars</h2>
-    <p class="lede sew">Two small pieces cut from the same yarn and felt. Stars for a rating are
-    die-cut like stickers, each pressed on at a slight tilt. A yarn cross is two short strands knotted
-    where they meet, ready wherever something needs closing or clearing away.</p>
+    <p class="lede sew">Small actions stay in the same material. Three yarn strands pull into the
+    tied cross used for menus, while the standalone cross closes notes and notifications. Rating
+    stars are die-cut felt stickers, each pressed on at a slight tilt.</p>
     <div class="stage felt stitch sew" style="--c:var(--cream);--t:var(--thread-cream)">
       <div class="row">
         <span class="field-label" style="margin:0">Rating</span>
@@ -243,9 +243,9 @@
       </div>
       <div class="row" style="margin-top:20px">
         <span class="field-label" style="margin:0">Yarn cross</span>
-        <button type="button" class="yarn-x" aria-label="close"><span class="yarn" style="--c:var(--thread-rose)"></span><span class="yarn" style="--c:var(--thread-rose)"></span></button>
-        <button type="button" class="yarn-x" aria-label="close"><span class="yarn" style="--c:var(--thread-sky)"></span><span class="yarn" style="--c:var(--thread-sky)"></span></button>
-        <button type="button" class="yarn-x" aria-label="close"><span class="yarn" style="--c:var(--cocoa)"></span><span class="yarn" style="--c:var(--cocoa)"></span></button>
+        <button type="button" class="yarn-x" aria-label="close" style="--c:var(--thread-rose)"><span class="yarn" style="--c:var(--thread-rose)"></span><span class="yarn" style="--c:var(--thread-rose)"></span></button>
+        <button type="button" class="yarn-x" aria-label="close" style="--c:var(--thread-sky)"><span class="yarn" style="--c:var(--thread-sky)"></span><span class="yarn" style="--c:var(--thread-sky)"></span></button>
+        <button type="button" class="yarn-x" aria-label="close" style="--c:var(--cocoa)"><span class="yarn" style="--c:var(--cocoa)"></span><span class="yarn" style="--c:var(--cocoa)"></span></button>
         <span class="cap">Two strands crossed and knotted at the center. Hover to give it a twist.</span>
       </div>
     </div>

@@ -8,6 +8,10 @@ Before you create, edit, or run files in a directory, read that directory's `AGE
 
 # Agent Skills Index
 
+These project skills are not Claude Code slash-command skills. When a listed skill is relevant, read its `SKILL.md` path directly instead of trying a Skill tool or slash command.
+
+Each description is the trigger. Respect it, and when it matches the task, read the skill's `SKILL.md` plus any relevant references, assets, scripts, or nearby root files the skill points to.
+
 ## anti-backrooms
 
 `.agents/skills/anti-backrooms/SKILL.md`
@@ -24,7 +28,7 @@ Before you create, edit, or run files in a directory, read that directory's `AGE
 
 `.agents/skills/claude-code-compat/SKILL.md`
 
-> Keep Claude Code in sync with cross-tool Agent Skills and AGENTS.md by regenerating a managed block in CLAUDE.md. Run it whenever anything under .agents changes, such as a skill being added, removed, renamed, or having its name or description edited, and whenever a repository has an AGENTS.md or .agents/skills but no up-to-date CLAUDE.md, because Claude Code natively reads only CLAUDE.md and .claude/skills. It lists each skill's name and description so Claude Code can discover and load them on demand.
+> Keep Claude Code in sync with cross-tool Agent Skills and AGENTS.md by regenerating a managed block in CLAUDE.md. Run it whenever anything under .agents changes, such as a skill being added, removed, renamed, or having its name or description edited, and whenever a repository has an AGENTS.md or .agents/skills but no up-to-date CLAUDE.md, because Claude Code natively reads only CLAUDE.md and .claude/skills. It lists each skill's name, path, and description so Claude can read matching skills directly.
 
 ## convex-compendium
 
