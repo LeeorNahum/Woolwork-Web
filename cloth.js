@@ -38,11 +38,16 @@
      canvas. Stirred by a slow sinusoidal draft. */
   var N = 42, pts = [], rest = 0;
   function build(){
-    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    /* Render at least twice the CSS resolution so the small diagonal pennant
+       edges and stitches stay crisp on ordinary displays and browser zoom.
+       Four is a safe ceiling for the hero's shallow canvas. */
+    var dpr = Math.min(4, Math.max(2, window.devicePixelRatio || 1));
     var rect = canvas.getBoundingClientRect();
     W = Math.max(1, rect.width); H = Math.max(1, rect.height);
     canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
     pts = [];
     var x0 = W * 0.03, x1 = W * 0.97, y = H * 0.18;
     var mid = Math.floor(N / 2);
