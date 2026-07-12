@@ -84,6 +84,12 @@ Each description is the trigger. Respect it, and when it matches the task, read 
 
 > Sync and update all installed skill submodules to their latest remote commits. Use this skill before every Git commit, or whenever the user asks to update, sync, refresh, or pull installed skills, or when a skill is installed.
 
+## subagent-spawn-book
+
+`.agents/skills/subagent-spawn-book/SKILL.md`
+
+> Subagent Spawn Book (SSB) is used before creating any subagent, whether the user asks for one, the agent decides to delegate, or a plan includes delegation or fan-out. Select a default model when none is named, name the session, then read the selected model's spawn reference.
+
 ## web-repository-opinions
 
 `.agents/skills/web-repository-opinions/SKILL.md`

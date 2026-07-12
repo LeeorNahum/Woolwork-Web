@@ -117,7 +117,7 @@ Nothing straight. Patches use irregular, hand-cut corner radii (each corner slig
 
 - **Buttons (`.btn-patch`):** felt patches with a stitched inset border, padded 14px vertically and 24px horizontally; hover lifts 1.5px, press settles 1.5px into a deepened inset shadow. Dye per instance with `--c`/`--t` token pairs.
 - **Cards (`.felt`, `.knit`):** felt or stockinette-knit patches; `.stitch` adds the sewn border, `.sew` the place-then-stitch arrival.
-- **Inputs (`.pocket`):** text fields are slits cut into the felt; selects are paper choice slips resting inside one recessed felt pocket, with opaque concertina paper options. Focus wraps a rose thread ring.
+- **Inputs (`.pocket`):** text fields are slits cut into the felt; selects are a single properly sized paper choice sheet, sized and aligned like the fields beside it, with opaque concertina paper options unfolding from its own bottom edge. Focus wraps a rose thread ring.
 - **Checkboxes (`.sew-check`) and radios (`.snap-radio`):** four-hole buttons cross-stitched shut and snap fasteners.
 - **Navigation and overlays:** tabs are hand-cut fabric labels tucked behind the content card they switch. Modals are felt notes clipped over the board; dropdowns are paper slips slotted behind their trigger; up to four toasts stack in a corner tray, each dismissable by its yarn cross or a swipe.
 - **Icons in yarn:** a close/dismiss is a yarn cross (`.yarn-x`), the exact shape the hamburger settles into; ratings are die-cut sticker stars (`.stars` / `.star`).

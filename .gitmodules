@@ -41,3 +41,7 @@
 	path = .agents/skills/woolwork-ui
 	url = https://github.com/LeeorNahum/woolwork-ui-skill.git
 	branch = dev
+[submodule ".agents/skills/subagent-spawn-book"]
+	path = .agents/skills/subagent-spawn-book
+	url = https://github.com/LeeorNahum/subagent-spawn-book-skill.git
+	branch = main
