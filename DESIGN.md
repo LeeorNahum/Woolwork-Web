@@ -119,8 +119,8 @@ Nothing straight. Patches use irregular, hand-cut corner radii (each corner slig
 - **Cards (`.felt`, `.knit`):** felt or stockinette-knit patches; `.stitch` adds the sewn border, `.sew` the place-then-stitch arrival.
 - **Inputs (`.pocket`):** text fields are slits cut into the felt; selects are a single properly sized paper choice sheet, sized and aligned like the fields beside it, with opaque concertina paper options unfolding from its own bottom edge. Focus wraps a rose thread ring.
 - **Checkboxes (`.sew-check`) and radios (`.snap-radio`):** four-hole buttons cross-stitched shut and snap fasteners.
-- **Navigation and overlays:** tabs are hand-cut fabric labels tucked behind the content card they switch. Modals are felt notes clipped over the board; dropdowns are paper slips slotted behind their trigger; up to four toasts stack in a corner tray, each dismissable by its yarn cross or a swipe.
-- **Icons in yarn:** a close/dismiss is a yarn cross (`.yarn-x`), the exact shape the hamburger settles into; ratings are die-cut sticker stars (`.stars` / `.star`).
+- **Navigation and overlays:** tabs are hand-cut fabric labels tucked behind the content card they switch, a flat vector shape (no 3D lean, which rasterizes into jagged edges at zoom). Modals (`dialog.pinned`) are paper sticky notes pinned above the board, closed by a pencil-drawn cross (`.pencil-x`), with any actions or fields inside in `.btn-ink`/`.ink-line`, never felt, a clip, or `.pocket`; the board behind an open note is scroll-locked without layout shift. Dropdowns are paper slips slotted behind their trigger; up to four toasts stack in a corner tray, each dismissable by its yarn cross or a swipe.
+- **Icons in yarn:** a close/dismiss on wool surfaces is a yarn cross (`.yarn-x`), the exact shape the hamburger settles into; on paper popups it is two crossed pencils (`.pencil-x`); ratings are die-cut sticker stars (`.stars` / `.star`).
 - **Decoration:** pompoms, woven tags, and thin bent-steel paper clips (`.clip`, placed `.tl`/`.tc`/`.tr`) holding patches down, sparingly, dyed from the same tokens.
 
 ## Do's and Don'ts

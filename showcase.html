@@ -199,23 +199,52 @@
 
   <section class="section" id="overlays">
     <h2 class="sew">Overlays, seams &amp; feedback</h2>
-    <p class="lede sew">A modal is a felt note clipped up over the board; press the board around it
-    and it comes back down. A tooltip is a paper tag tied on with thread. An accordion unzips. A
-    divider is a seam: a running stitch across a pressed crease.</p>
+    <p class="lede sew">Popups are paper: a sticky note pinned above the board, closed with a
+    pencil-drawn cross, never wool. A tooltip is a paper tag tied on with thread. An accordion
+    unzips. A divider is a seam: a running stitch across a pressed crease.</p>
+
+    <h3 class="sew" style="margin:28px 4px 8px;font:800 1.15rem var(--font-display)">Popups</h3>
+    <p class="lede sew">A short note and a small form, pinned up the same way. Press the board
+    around either one, or its pencil cross, to take it back down. Paper popups carry no wool: no
+    felt, no clips, no yarn, just paper, ink, and pencil.</p>
     <div class="stage felt stitch sew" style="--c:var(--cream);--t:var(--thread-cream)">
       <div class="row">
-        <button type="button" class="btn-patch" style="--c:var(--rose);--t:var(--thread-rose)" id="ws-open-pin">Pin up a note</button>
+        <button type="button" class="btn-patch pinned-trigger" style="--c:var(--rose);--t:var(--thread-rose)" id="ws-open-pin">Pin up a care note</button>
+        <button type="button" class="btn-patch pinned-trigger" style="--c:var(--leaf);--t:var(--thread-leaf)" id="ws-open-form">Pin up an entry form</button>
+      </div>
+      <p class="cap no-js-note">Shown already pinned open below: without script there is no trigger to open or close it.</p>
+      <dialog class="pinned" id="ws-pin">
+        <button type="button" class="pencil-x pinned-close" aria-label="Close" onclick="document.getElementById('ws-pin').close()"><span class="pencil"></span><span class="pencil"></span></button>
+        <h3 style="margin:0 0 8px">Care note</h3>
+        <p style="margin:0 0 16px">This yarn runs slightly warm in the dye lot; wash separately the first time.</p>
+        <button type="button" class="btn-ink stamp" onclick="document.getElementById('ws-pin').close()">Got it</button>
+      </dialog>
+      <dialog class="pinned" id="ws-form">
+        <button type="button" class="pencil-x pinned-close" aria-label="Close" onclick="document.getElementById('ws-form').close()"><span class="pencil"></span><span class="pencil"></span></button>
+        <h3 style="margin:0 0 14px">Get a restock alert</h3>
+        <form method="dialog">
+          <div class="field">
+            <label for="ws-form-email">Email</label>
+            <input id="ws-form-email" class="ink-line" type="email" placeholder="you@example.com">
+          </div>
+          <div class="field" style="margin-top:14px">
+            <label for="ws-form-yarn">Preferred weight</label>
+            <select id="ws-form-yarn" class="pocket">
+              <option>Lace</option><option>Fingering</option><option>DK</option><option>Aran</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-ink stamp" style="margin-top:18px">Notify me</button>
+        </form>
+      </dialog>
+    </div>
+
+    <h3 class="sew" style="margin:28px 4px 8px;font:800 1.15rem var(--font-display)">Toasts &amp; tooltips</h3>
+    <div class="stage felt stitch sew" style="--c:var(--cream);--t:var(--thread-cream)">
+      <div class="row">
         <button type="button" class="btn-patch" style="--c:var(--butter);--t:var(--thread-butter)" onclick="woolwork.toast('Saved to your pattern box.')">Show a toast</button>
         <button type="button" class="btn-patch" style="--c:var(--sky);--t:var(--thread-sky)" onclick="woolwork.toast('Pattern copied.');woolwork.toast('Yarn added.');woolwork.toast('Row counter reset.')">Stack three</button>
         <span data-tip="A paper tag, tied on with thread" tabindex="0">hover or focus for a tooltip</span>
       </div>
-      <dialog class="pinned" id="ws-pin">
-        <div class="clip tl"></div><div class="clip tr"></div>
-        <button type="button" class="yarn-x" aria-label="close" style="position:absolute;top:14px;right:16px" onclick="document.getElementById('ws-pin').close()"><span class="yarn" style="--c:var(--cocoa)"></span><span class="yarn" style="--c:var(--cocoa)"></span></button>
-        <h3 style="margin:0 0 8px">Care note</h3>
-        <p style="margin:0 0 16px">This yarn runs slightly warm in the dye lot; wash separately the first time.</p>
-        <button type="button" class="btn-patch" style="--c:var(--sky);--t:var(--thread-sky)" onclick="document.getElementById('ws-pin').close()">Got it</button>
-      </dialog>
     </div>
     <hr class="seam sew">
     <div class="stage felt stitch sew" style="--c:var(--cream);--t:var(--thread-cream);margin-top:16px">
@@ -229,8 +258,8 @@
   <section class="section" id="icons">
     <h2 class="sew">Icons &amp; stars</h2>
     <p class="lede sew">Small actions stay in the same material. Three yarn strands pull into the
-    tied cross used for menus, while the standalone cross closes notes and notifications. Rating
-    stars are die-cut felt stickers, each pressed on at a slight tilt.</p>
+    tied cross used for menus, while the standalone cross dismisses toasts and other wool
+    surfaces. Rating stars are die-cut felt stickers, each pressed on at a slight tilt.</p>
     <div class="stage felt stitch sew" style="--c:var(--cream);--t:var(--thread-cream)">
       <div class="row">
         <span class="field-label" style="margin:0">Rating</span>
@@ -276,34 +305,38 @@
         <span class="spinner" style="--c:var(--rose)" role="status" aria-label="loading"></span>
       </div>
       <div class="notice sew" style="margin-top:18px;--c:var(--butter)">Hand wash only: this dye lot runs in warm water.</div>
-      <div class="row" style="margin-top:18px;display:grid;gap:10px">
-        <div class="basting" style="height:18px;width:65%"></div>
-        <div class="basting" style="height:18px;width:45%"></div>
+      <div class="row" style="margin-top:18px;gap:14px;align-items:center">
+        <div class="basting" style="width:46px;height:46px;border-radius:50%;flex:none"></div>
+        <div style="flex:1;min-width:160px;display:grid;gap:8px">
+          <div class="basting" style="height:16px;width:60%"></div>
+          <div class="basting" style="height:12px;width:85%"></div>
+        </div>
       </div>
+      <span class="cap">Basting stands in for the row above it: a round avatar and two lines of text, still loading.</span>
     </div>
   </section>
 
   <section class="section" id="content">
     <h2 class="sew">Long-form content</h2>
-    <p class="lede sew">A whole article stays in the material. Headings are embroidered, a pull quote
-    hangs from a yarn selvedge, list markers are french knots, and the one paper surface in the room
-    holds a pattern you can copy down.</p>
+    <p class="lede sew">Everyday reading material stays in the same wool: an embroidered heading,
+    a pull quote hanging from a yarn selvedge, french-knot list bullets, and the one paper surface
+    in the room for anything meant to be copied down exactly.</p>
     <div class="stage felt stitch sew" style="--c:var(--cream);--t:var(--thread-cream)">
-      <h3 class="embroider" style="font-size:1.6rem;margin:0 0 12px">Casting on</h3>
-      <blockquote class="selvedge" style="--c:var(--plum)">Knit with the yarn you have, not the yarn you wish you had.</blockquote>
-      <p>A pattern is mostly shorthand. <code class="pattern">k2tog</code> knits two stitches
-      together; <code class="pattern">ssk</code> leans them the other way. Reading it from a screen,
-      <kbd class="pattern">Ctrl</kbd> and <kbd class="pattern">+</kbd> zoom the chart until the
-      smallest symbols are easy to count.</p>
+      <h3 class="embroider" style="font-size:1.6rem;margin:0 0 12px">Caring for hand-dyed wool</h3>
+      <blockquote class="selvedge" style="--c:var(--plum)">Cold water and a flat dry keep hand-dyed yarn looking new for years.</blockquote>
+      <p>Wash on a wool or delicate cycle below <code class="pattern">30°C</code>. Looking this up
+      on a phone or laptop later? Press <kbd class="pattern">Ctrl</kbd> and <kbd class="pattern">F</kbd>
+      to search this page for any care term.</p>
       <ul class="knots" style="--t:var(--thread-rose)">
-        <li>Right-side rows read right to left</li>
-        <li>Wrong-side rows read the other way</li>
-        <li>Slip the first stitch of each row for a clean edge</li>
+        <li>Turn the garment inside out before washing</li>
+        <li>Skip the fabric softener; it flattens the fiber</li>
+        <li>Reshape while damp, then lay flat away from direct sun</li>
       </ul>
-      <pre class="pattern">Cast on 80 stitches.
-Row 1 (RS): k2, *p2, k2; repeat to end.
-Row 2 (WS): work the stitches as they appear.
-Repeat rows 1 and 2 until the ribbing measures 5 cm.</pre>
+      <pre class="pattern">Suggested wash label:
+Hand wash cold
+Do not bleach
+Dry flat, do not tumble
+Cool iron if needed</pre>
     </div>
   </section>
 
@@ -313,6 +346,9 @@ Repeat rows 1 and 2 until the ribbing measures 5 cm.</pre>
 var wsPin = document.getElementById('ws-pin');
 var wsOpen = document.getElementById('ws-open-pin');
 if(wsPin && wsOpen){ wsOpen.addEventListener('click', function(){ wsPin.showModal(); }); }
+var wsForm = document.getElementById('ws-form');
+var wsOpenForm = document.getElementById('ws-open-form');
+if(wsForm && wsOpenForm){ wsOpenForm.addEventListener('click', function(){ wsForm.showModal(); }); }
 /* Keep the browser chrome color in step with the night toggle. The two hex
    values are the kit's board tokens; theme-color cannot read CSS variables. */
 new MutationObserver(function(){
