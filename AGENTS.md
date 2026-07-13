@@ -19,6 +19,7 @@ This site and the `woolwork-ui` skill (github.com/LeeorNahum/woolwork-ui-skill, 
 
 - Any kit change (a class, token, behavior, or kit doc) is made in the skill repo, on its `dev` branch, with the skill's own AGENTS.md rules applied (version surfaces bumped, dictionary and migration updated together).
 - The same session then updates this repo on its `dev` branch: advance the `.agents/skills/woolwork-ui` submodule pointer to that skill commit, and re-copy `assets/woolwork.css` and `assets/woolwork.js` over the site's kit files. The site's `--ww-version` must always equal the pinned submodule's version.
+- Both page footers render the kit version from the canonical `--ww-version` token through `.kit-version`; never hard-code a second version into their HTML or `site.css`.
 - The reverse holds: if site work reveals a kit defect, fix it in the skill repo first, then flow it back here. Never patch the kit files locally.
 - Releases move together. First the skill releases (its `dev` fast-forwards to `main`, tag `vX.Y.Z`, the release workflow packages and publishes `woolwork-ui.zip`). Then this site pins the submodule to that released commit on `dev` and promotes `dev` to `preview` to `main`. Site `main` must only ever pin a skill commit that is reachable from the skill's `main`.
 - The product page's "Get the skill" button links to the skill repo's latest-release page (`releases/latest`), never to a zip hosted in this repo, so the site stays correct when the skill releases without a site deploy.

@@ -24,6 +24,7 @@ main{max-width:920px;margin:0 auto;padding:34px 22px 60px}
 html:not(.ww-js) .night-corner{display:none}
 h2{font-family:var(--font-display);margin:34px 4px 12px}
 footer{text-align:center;color:var(--ink-soft);font-size:.9rem;margin-top:36px}
+.kit-version::before{content:var(--ww-version)}
 .demo-row{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-top:14px}
 .cta-link{text-decoration:none}
 
