@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Woolwork components</title>
-<meta name="description" content="Every Woolwork component, live: felt patches, sewn buttons, pockets, snap fasteners, zippers, pinned notes, quilted tables, and the rest of the craft table.">
+<meta name="description" content="Every Woolwork component, live: felt patches, patch buttons, pockets, snap fasteners, zippers, pinned notes, quilted tables, and the rest of the craft table.">
 <link rel="canonical" href="https://woolwork.dev/showcase">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Woolwork">
 <meta property="og:title" content="Woolwork components">
-<meta property="og:description" content="Every Woolwork component, live: felt patches, sewn buttons, pockets, snap fasteners, zippers, pinned notes, quilted tables, and the rest of the craft table.">
+<meta property="og:description" content="Every Woolwork component, live: felt patches, patch buttons, pockets, snap fasteners, zippers, pinned notes, quilted tables, and the rest of the craft table.">
 <meta property="og:url" content="https://woolwork.dev/showcase">
 <meta property="og:image" content="https://woolwork.dev/og.png">
 <meta property="og:image:width" content="1200">
@@ -17,7 +17,7 @@
 <meta property="og:image:alt" content="A cream felt patch clipped to a burlap board under colorful bunting, with the Woolwork name and two buttons.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Woolwork components">
-<meta name="twitter:description" content="Every Woolwork component, live: felt patches, sewn buttons, pockets, snap fasteners, zippers, pinned notes, quilted tables, and the rest of the craft table.">
+<meta name="twitter:description" content="Every Woolwork component, live: felt patches, patch buttons, pockets, snap fasteners, zippers, pinned notes, quilted tables, and the rest of the craft table.">
 <meta name="twitter:image" content="https://woolwork.dev/og.png">
 <meta name="twitter:image:alt" content="A cream felt patch clipped to a burlap board under colorful bunting, with the Woolwork name and two buttons.">
 <meta name="theme-color" content="#e3ddd0">
@@ -26,11 +26,11 @@
 <link rel="preload" href="fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="woolwork.css">
 <link rel="stylesheet" href="site.css">
-<script>document.documentElement.classList.add('ww-js')</script>
+<script>document.documentElement.classList.add('ww-js');try{if(new URL(location.href).searchParams.get('theme')==='night'){document.documentElement.setAttribute('data-theme','night');document.querySelector('meta[name="theme-color"]').setAttribute('content','#332e42')}}catch(e){}</script>
 </head>
 <body class="board">
 <a class="btn-patch top-link" style="--c:var(--sky);--t:var(--thread-sky)" href="index.html">Woolwork</a>
-<button type="button" class="btn-patch night-corner" style="--c:var(--plum);--t:var(--thread-plum)" onclick="woolwork.night()">Night</button>
+<button type="button" class="btn-patch night-corner" style="--c:var(--plum);--t:var(--thread-plum)" data-woolwork-theme-toggle data-night-label="Night" data-day-label="Day" aria-pressed="false" onclick="woolwork.night()">Night</button>
 
 <main>
   <div class="intro sew">
@@ -81,20 +81,18 @@
     <h2 class="sew">Buttons &amp; controls</h2>
     <p class="lede sew">A button is a felt patch stitched to the board. Press it and it sinks into
     the board a hair, then springs back, so the label and its stitches never jump or blur. Compact
-    round actions are real four-hole sewn buttons, thread cross and all.</p>
+    actions use the same stitched patch material.</p>
     <div class="stage felt stitch sew" style="--c:var(--cream);--t:var(--thread-cream)">
       <div class="row">
         <button type="button" class="btn-patch" style="--c:var(--butter);--t:var(--thread-butter)">Add to cart</button>
         <button type="button" class="btn-patch" style="--c:var(--rose);--t:var(--thread-rose)">Checkout</button>
-        <button type="button" class="sewn-button" style="--c:var(--sky)" aria-label="sewn button, sky"></button>
-        <button type="button" class="sewn-button" style="--c:var(--leaf)" aria-label="sewn button, leaf"></button>
         <a class="thread-link" href="#materials">a loose-thread link, pulls taut on hover</a>
       </div>
     </div>
     <div class="stage felt stitch sew" style="--c:var(--butter);--t:var(--thread-butter)">
       <span class="field-label">Toggle: the buttonhole</span>
       <button type="button" class="buttonhole" aria-pressed="true" aria-label="notifications"><span class="knob"></span></button>
-      <span class="cap">The knob is a small sewn button sliding through a stitched buttonhole.</span>
+      <span class="cap">The four-hole knob slides through a stitched buttonhole.</span>
     </div>
   </section>
 
@@ -352,11 +350,13 @@ var wsOpenForm = document.getElementById('ws-open-form');
 if(wsForm && wsOpenForm){ wsOpenForm.addEventListener('click', function(){ wsForm.showModal(); }); }
 /* Keep the browser chrome color in step with the night toggle. The two hex
    values are the kit's board tokens; theme-color cannot read CSS variables. */
-new MutationObserver(function(){
+function syncThemeColor(){
   var m = document.querySelector('meta[name="theme-color"]');
   if(m) m.setAttribute('content',
     document.documentElement.getAttribute('data-theme') === 'night' ? '#332e42' : '#e3ddd0');
-}).observe(document.documentElement, {attributes:true, attributeFilter:['data-theme']});
+}
+syncThemeColor();
+new MutationObserver(syncThemeColor).observe(document.documentElement, {attributes:true, attributeFilter:['data-theme']});
 </script>
 </body>
 </html>

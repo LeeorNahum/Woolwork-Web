@@ -26,10 +26,10 @@
 <link rel="preload" href="fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="woolwork.css">
 <link rel="stylesheet" href="site.css">
-<script>document.documentElement.classList.add('ww-js')</script>
+<script>document.documentElement.classList.add('ww-js');try{if(new URL(location.href).searchParams.get('theme')==='night'){document.documentElement.setAttribute('data-theme','night');document.querySelector('meta[name="theme-color"]').setAttribute('content','#332e42')}}catch(e){}</script>
 </head>
 <body class="board">
-<button type="button" class="btn-patch night-corner" style="--c:var(--plum);--t:var(--thread-plum)" onclick="woolwork.night()">Night</button>
+<button type="button" class="btn-patch night-corner" style="--c:var(--plum);--t:var(--thread-plum)" data-woolwork-theme-toggle data-night-label="Night" data-day-label="Day" aria-pressed="false" onclick="woolwork.night()">Night</button>
 <main>
   <header class="felt deep stitch sew hero" style="--c:var(--cream);--t:var(--thread-cream)">
     <canvas id="bunting" aria-hidden="true"></canvas>
@@ -73,7 +73,7 @@
     exist now or get added later.</p>
     <pre class="pattern">&lt;link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet"&gt;
 &lt;link rel="stylesheet" href="/woolwork/woolwork.css"&gt;
-&lt;script&gt;document.documentElement.classList.add('ww-js')&lt;/script&gt;
+&lt;script&gt;document.documentElement.classList.add('ww-js');try{if(new URL(location.href).searchParams.get('theme')==='night')document.documentElement.setAttribute('data-theme','night')}catch(e){}&lt;/script&gt;
 &lt;script src="/woolwork/woolwork.js" defer onerror="document.documentElement.classList.remove('ww-js')"&gt;&lt;/script&gt;
 &lt;body class="board"&gt; ... &lt;/body&gt;</pre>
   </div>
@@ -105,11 +105,13 @@
 <script>
 /* Keep the browser chrome color in step with the night toggle. The two hex
    values are the kit's board tokens; theme-color cannot read CSS variables. */
-new MutationObserver(function(){
+function syncThemeColor(){
   var m = document.querySelector('meta[name="theme-color"]');
   if(m) m.setAttribute('content',
     document.documentElement.getAttribute('data-theme') === 'night' ? '#332e42' : '#e3ddd0');
-}).observe(document.documentElement, {attributes:true, attributeFilter:['data-theme']});
+}
+syncThemeColor();
+new MutationObserver(syncThemeColor).observe(document.documentElement, {attributes:true, attributeFilter:['data-theme']});
 </script>
 </body>
 </html>

@@ -61,6 +61,7 @@ footer{text-align:center;color:var(--ink-soft);font-size:.9rem;margin-top:36px}
 .row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
 .row+.row{margin-top:16px}
 .cap{display:block;font-size:.82rem;color:var(--ink-soft);margin-top:6px}
+.stage .cap{color:inherit}
 .field{min-width:200px}
 .field label{display:block;margin-bottom:6px;font-weight:700;font-size:.9rem}
 /* Same look as a field label, for captions that do not label a single form
