@@ -6,7 +6,7 @@
 	url = https://github.com/LeeorNahum/claude-code-compat-skill.git
 [submodule ".agents/skills/anti-backrooms"]
 	path = .agents/skills/anti-backrooms
-	url = https://github.com/LeeorNahum/anti-backrooms.git
+	url = https://github.com/LeeorNahum/anti-backrooms-skill.git
 [submodule ".agents/skills/skill-forge-skill"]
 	path = .agents/skills/skill-forge
 	url = https://github.com/LeeorNahum/skill-forge-skill.git
@@ -18,7 +18,7 @@
 	url = https://github.com/LeeorNahum/web-repository-opinions-skill.git
 [submodule ".agents/skills/provider-onboarding-skill"]
 	path = .agents/skills/provider-onboarding
-	url = https://github.com/LeeorNahum/provider-onboarding-skill.git
+	url = https://github.com/LeeorNahum/provider-onboarding-skill-archive.git
 [submodule ".agents/skills/skill-sync-skill"]
 	path = .agents/skills/skill-sync
 	url = https://github.com/LeeorNahum/skill-sync-skill.git
