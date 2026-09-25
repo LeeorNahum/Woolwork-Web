@@ -34,11 +34,11 @@ Each description is the trigger. Respect it, and when it matches the task, read 
 
 ## [monolith-audit](.agents/skills/monolith-audit/SKILL.md)
 
-> Build or audit a body of work to rigorous, present-day correctness: ground in the live code, verify every external assumption at the source, and eliminate or never introduce anything broken, obsolete, duplicated, incoherent, or worked-around. Runs whole-repo when invoked bare, or appended to a specific task or focus (a feature, fix, subsystem, surface, or file set), where it holds that task and everything in its blast radius to the same standard so the work is done right in one pass rather than patched and audited later. This skill is strictly manual and must only be invoked by name, Monolith Audit (MA). When invoked, load this skill and follow it for deep, whole-product correctness, cleanliness, and coherence work across backend, data, APIs, protocols, frontend, UI, UX, copy, configuration, environment contracts, integration points, and product flows, or for self-critical building and rewrites validated against up-to-date, authoritative references.
+> Build or audit a body of work to rigorous, present-day correctness: ground in the live code, verify every external assumption at the source, and eliminate or never introduce anything broken, obsolete, duplicated, incoherent, or worked-around. Runs whole-repo when invoked bare, or appended to a specific task or focus (a feature, fix, subsystem, surface, or file set), where it holds that task and everything in its blast radius to the same standard so the work is done right in one pass rather than patched and audited later. This skill is strictly manual and must only be invoked by name, Monolith Audit. When invoked, load this skill and follow it for deep, whole-product correctness, cleanliness, and coherence work across backend, data, APIs, protocols, frontend, UI, UX, copy, configuration, environment contracts, integration points, and product flows, or for self-critical building and rewrites validated against up-to-date, authoritative references.
 
 ## [naming-check](.agents/skills/naming-check/SKILL.md)
 
-> Use when a name for a brand, product, company, app, or domain is proposed, compared, or about to be adopted, including when the user asks whether a name is taken. Evaluates the name for conflicts, risks, and quality and gives a verdict.
+> Use while generating, brainstorming, searching for, comparing, evaluating, or adopting a name for a brand, product, company, app, or domain, including when the user asks whether a name is taken or available, and even when they only want name ideas and never ask for a check. Evaluates each candidate for conflicts, risks, and quality and gives a verdict.
 
 ## [no-em-dashes](.agents/skills/no-em-dashes/SKILL.md)
 
@@ -54,7 +54,7 @@ Each description is the trigger. Respect it, and when it matches the task, read 
 
 ## [skill-forge](.agents/skills/skill-forge/SKILL.md)
 
-> Use when creating, designing, refining, reviewing, or validating an Agent Skill that follows the open SKILL.md standard: writing or tuning its triggering description, organizing its references, scripts, or assets directories, preserving key wording and meaning during edits, deciding automatic or manual invocation, or answering questions about skill structure, naming conventions, or SKILL.md format. Holds the authoring rules and a validator for the spec and house style.
+> Use before creating or editing any Agent Skill or any file bundled with one: a SKILL.md, a skill's description or frontmatter, its AGENTS.md or README, or a reference, script, asset, or other file under a skill directory. Load it before the first edit, not after. Also use when designing, refining, reviewing, or validating a skill that follows the open SKILL.md standard: writing or tuning its triggering description, organizing its references, scripts, or assets directories, preserving key wording and meaning during edits, deciding automatic or manual invocation, or answering questions about skill structure, naming conventions, or SKILL.md format. Holds the authoring rules and a validator for the spec and house style.
 
 ## [skill-sync](.agents/skills/skill-sync/SKILL.md)
 
@@ -62,7 +62,7 @@ Each description is the trigger. Respect it, and when it matches the task, read 
 
 ## [subagent-spawn-book](.agents/skills/subagent-spawn-book/SKILL.md)
 
-> Subagent Spawn Book (SSB). Use before creating any subagent and before choosing which model leads a session or orchestrates a run: whenever the user asks for one, a plan includes delegation or fan-out, or the work at hand would go better in another session, such as research, a browser or computer-use task, a review or critique, a visual check, a bulk job, or anything the current model does badly.
+> Subagent Spawn Book (SSB). Use before creating any subagent and before choosing which model leads a session or orchestrates a run: whenever the user asks for one, a plan includes delegation or fan-out, or the work at hand would go better in another session, such as research, a browser or computer-use task, a review or critique, a visual check, a bulk job, or anything another model would do better.
 
 ## [web-repository-opinions](.agents/skills/web-repository-opinions/SKILL.md)
 
